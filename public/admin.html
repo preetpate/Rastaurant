@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin — Prime Restaurant Orders</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+<header class="admin-header">
+  <div class="admin-bar">
+    <div class="admin-brand">
+      <img src="assets/logo-mark.png" alt="Prime Restaurant" height="42" />
+      <div>
+        <strong>Prime Restaurant</strong>
+        <span>Kitchen &amp; orders dashboard</span>
+      </div>
+    </div>
+    <div class="admin-actions">
+      <label class="switch">
+        <input type="checkbox" id="autoRefresh" checked />
+        <span>Auto refresh</span>
+      </label>
+      <button class="btn ghost" id="qrBtn">Show QR</button>
+      <a class="btn ghost" href="index.html" target="_blank" rel="noopener">Open site</a>
+      <button class="btn danger" id="clearBtn">Clear all</button>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card"><span class="stat-value" id="statNew">0</span><span class="stat-key">New</span></div>
+    <div class="stat-card"><span class="stat-value" id="statPreparing">0</span><span class="stat-key">Preparing</span></div>
+    <div class="stat-card"><span class="stat-value" id="statServed">0</span><span class="stat-key">Served</span></div>
+    <div class="stat-card"><span class="stat-value" id="statRevenue">$0</span><span class="stat-key">Revenue today</span></div>
+  </div>
+
+  <div class="filters">
+    <button class="chip is-active" data-filter="all">All</button>
+    <button class="chip" data-filter="new">New</button>
+    <button class="chip" data-filter="preparing">Preparing</button>
+    <button class="chip" data-filter="served">Served</button>
+    <button class="chip" data-filter="cancelled">Cancelled</button>
+    <input type="search" id="search" placeholder="Search name, table or dish…" />
+  </div>
+</header>
+
+<main class="admin-main">
+  <p class="conn-error" id="connError" hidden>
+    Cannot reach the server. Start it with <code>npm start</code> and refresh this page.
+  </p>
+  <div class="orders" id="orders"></div>
+  <p class="empty" id="empty" hidden>No orders yet. Scan the QR code and place one from your phone.</p>
+</main>
+
+<div class="modal" id="qrModal" hidden>
+  <div class="modal-card">
+    <button class="modal-close" id="qrClose" aria-label="Close">&times;</button>
+    <h2>Scan to order</h2>
+    <p class="muted">Print this and put it on each table. Phones must be on the same wifi.</p>
+    <img id="qrImage" alt="QR code linking to the ordering website" width="280" height="280" />
+    <p class="qr-url" id="qrUrl"></p>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
