@@ -45,7 +45,13 @@ function localAddress() {
 
 function siteUrl(req) {
   if (process.env.PUBLIC_URL) return process.env.PUBLIC_URL;
-  if (req) return req.protocol + "://" + req.get("host");
+  if (req) {
+    // Render (and most reverse-proxy hosts) terminate SSL at the edge,
+    // so req.protocol is "http" internally even though the public URL is https.
+    // The x-forwarded-proto header carries the real protocol.
+    const proto = req.headers["x-forwarded-proto"] || req.protocol;
+    return proto + "://" + req.get("host");
+  }
   return "http://" + localAddress() + ":" + PORT;
 }
 
