@@ -393,3 +393,63 @@ h3 { font-size:1.25rem; }
 .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: var(--r2); box-shadow: var(--shadow-lg); object-fit: contain; }
 .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: #fff; width: 44px; height: 44px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; display: grid; place-items: center; transition: .2s; }
 .lightbox-close:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
+
+/* ── CRITICAL FIXES ── */
+
+/* Fix 1: Reveal animation — make visible by default, animate in */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1 !important; transform: none !important; }
+
+/* Fix 2: Force text visibility on dark sections */
+.stats-section, .about-section, .menu-section,
+.gallery-section, .reviews-section, .delivery-section,
+.reserve-section, .contact-section, .site-footer { color: var(--white); }
+
+.stats-section .stat-label { color: rgba(255,255,255,.5) !important; }
+.about-section h2, .about-text h2 { color: var(--white) !important; }
+.about-text p { color: rgba(255,255,255,.75) !important; }
+.check-list li { color: rgba(255,255,255,.7) !important; }
+.section-head h2 { color: var(--white) !important; }
+.section-head .section-sub { color: rgba(255,255,255,.55) !important; }
+.eyebrow { color: var(--gold) !important; }
+
+/* Fix 3: Reserve section text */
+.reserve-section { background: var(--black2) !important; }
+.reserve-info h2 { color: var(--white) !important; }
+.reserve-info p { color: rgba(255,255,255,.65) !important; }
+.info-items li { color: rgba(255,255,255,.7) !important; }
+.form-box { background: var(--black3) !important; border: 1px solid var(--line-dark) !important; }
+.field label { color: rgba(255,255,255,.6) !important; }
+.field input, .field select, .field textarea { background: var(--black4) !important; color: var(--white) !important; border-color: rgba(255,255,255,.1) !important; }
+.field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,.3) !important; }
+
+/* Fix 4: Contact section */
+.contact-card p, .contact-card a { color: rgba(255,255,255,.65) !important; }
+.contact-card h3 { color: var(--gold) !important; }
+.hours-tbl th { color: rgba(255,255,255,.45) !important; }
+.hours-tbl td { color: var(--white) !important; }
+
+/* Fix 5: Footer text */
+.footer-desc { color: rgba(255,255,255,.45) !important; }
+.footer-col h4 { color: var(--white) !important; }
+.footer-col a { color: rgba(255,255,255,.5) !important; }
+.footer-bottom { color: rgba(255,255,255,.35) !important; }
+.news-form input { color: var(--white) !important; }
+.news-form input::placeholder { color: rgba(255,255,255,.3) !important; }
+
+/* Fix 6: Delivery section */
+.del-card h3 { color: var(--white) !important; }
+.del-card p { color: rgba(255,255,255,.6) !important; }
+
+/* Fix 7: Reviews */
+.rev-text { color: rgba(255,255,255,.82) !important; }
+.rev-author { color: var(--gold) !important; }
+
+/* Fix 8: Hero facts */
+.hero-stat dd, .hero-stat dd a { color: rgba(255,255,255,.9) !important; }
+.hero-stat dt { color: var(--gold) !important; }
+.hero-desc { color: rgba(255,255,255,.72) !important; }
+
+/* Fix 9: Gold ribbon text always visible */
+.gold-ribbon { overflow: hidden; }
+.ribbon-inner span { color: var(--black) !important; font-weight: 700; }

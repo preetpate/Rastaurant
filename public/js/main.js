@@ -335,8 +335,15 @@
       const num = entry.target.querySelector(".stat-num");
       if (num) countUp(num);
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.05 });
   $$(".reveal").forEach(function (el) { revealObserver.observe(el); });
+  // Also mark elements in viewport on load immediately
+  setTimeout(function() {
+    $$(".reveal").forEach(function(el) {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) el.classList.add("visible");
+    });
+  }, 100);
 
   function countUp(el) {
     const target = Number(el.dataset.count || 0);
