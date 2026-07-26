@@ -117,3 +117,41 @@ code { background: rgba(255,255,255,.08); padding: .1rem .35rem; border-radius: 
   .stats-row { grid-template-columns: repeat(2, 1fr); }
   #search { margin-left: 0; width: 100%; }
 }
+
+/* ============ Source badge ============ */
+.order-top-right { display: flex; flex-direction: column; align-items: flex-end; gap: .4rem; }
+.source-badge {
+  font-size: .68rem; padding: .18rem .55rem; border-radius: 999px;
+  font-weight: 500; letter-spacing: .04em;
+}
+.source-qr { background: rgba(98,168,224,.15); color: #62a8e0; border: 1px solid rgba(98,168,224,.35); }
+.source-direct { background: rgba(155,155,145,.12); color: var(--muted); border: 1px solid var(--line); }
+
+/* ============ Admin toast notification ============ */
+.admin-toast {
+  position: fixed; bottom: 2rem; left: 50%; transform: translate(-50%, 20px);
+  z-index: 99; background: #2a3028; color: #f2f1ec;
+  padding: .9rem 1.5rem; border-radius: 999px; font-size: .9rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,.4); border: 1px solid var(--line);
+  opacity: 0; transition: opacity .3s ease, transform .3s ease;
+  white-space: nowrap;
+}
+.admin-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ============ Better order cards ============ */
+.order {
+  transition: box-shadow .2s ease;
+}
+.order:hover { box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+.order-actions .btn {
+  font-size: .82rem; padding: .45rem .85rem;
+}
+.btn.danger { color: var(--red); border-color: rgba(217,105,74,.4); }
+.btn.danger:hover { background: rgba(217,105,74,.15); border-color: var(--red); }
+
+/* ============ Status colors on stat cards ============ */
+.stat-card:nth-child(1) { border-top: 2px solid var(--gold); }
+.stat-card:nth-child(2) { border-top: 2px solid var(--blue); }
+.stat-card:nth-child(3) { border-top: 2px solid var(--green); }
+.stat-card:nth-child(4) { border-top: 2px solid #a78bfa; }
+.stat-card:nth-child(4) .stat-value { color: #a78bfa; }

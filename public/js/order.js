@@ -5,6 +5,10 @@
   const $ = (s) => document.querySelector(s);
   const STORAGE_KEY = "prime_cart";
 
+  // Detect if user came via QR scan (source=qr param or referrer is empty on mobile)
+  const urlParams = new URLSearchParams(window.location.search);
+  const ORDER_SOURCE = urlParams.get("source") === "qr" ? "QR Scan" : "Direct";
+
   let cart = load();
 
   function load() {
@@ -131,6 +135,7 @@
       phone: phone,
       table: $("#orderTable").value,
       notes: $("#orderNotes").value.trim(),
+      source: ORDER_SOURCE,
       items: cart,
       total: Number(total().toFixed(2))
     };
@@ -152,7 +157,8 @@
       render();
       $("#orderForm").reset();
       openCart(false);
-      toast("Order #" + order.number + " sent to the kitchen. Thank you, " + name + "!");
+      // Show beautiful order confirmation
+      showOrderConfirmation(order, name);
     } catch (fetchError) {
       showError("Could not reach the kitchen. Start the server (npm start) and try again.");
     } finally {
@@ -165,6 +171,43 @@
     const err = $("#cartError");
     err.textContent = message;
     err.hidden = false;
+  }
+
+  function showOrderConfirmation(order, name) {
+    const existing = $("#orderConfirmModal");
+    if (existing) existing.remove();
+
+    const itemsHtml = order.items.map(i =>
+      `<div class="confirm-item"><span>${i.qty}× ${i.name}</span><span>$${(i.price * i.qty).toFixed(2)}</span></div>`
+    ).join("");
+
+    const modal = document.createElement("div");
+    modal.id = "orderConfirmModal";
+    modal.className = "order-confirm-modal";
+    modal.innerHTML = `
+      <div class="order-confirm-card">
+        <div class="confirm-icon">✓</div>
+        <h2>Order Placed!</h2>
+        <p class="confirm-sub">Thank you, <strong>${name}</strong></p>
+        <div class="confirm-number">#${order.number}</div>
+        <div class="confirm-items">${itemsHtml}</div>
+        <div class="confirm-total">
+          <span>Total</span><strong>$${order.total.toFixed(2)}</strong>
+        </div>
+        <p class="confirm-table">🍽️ ${order.table}</p>
+        <p class="confirm-msg">Your order is on its way to the kitchen.<br/>We'll have it ready soon.</p>
+        <button class="btn btn-primary btn-block confirm-close">Done</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    document.body.classList.add("no-scroll");
+
+    setTimeout(() => modal.querySelector(".order-confirm-card").classList.add("show"), 10);
+
+    modal.querySelector(".confirm-close").addEventListener("click", () => {
+      modal.remove();
+      document.body.classList.remove("no-scroll");
+    });
   }
 
   render();

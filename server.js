@@ -77,6 +77,7 @@ app.post("/api/orders", (req, res) => {
     phone: String(body.phone || "").slice(0, 30),
     table: String(body.table || "Takeaway").slice(0, 30),
     notes: String(body.notes || "").slice(0, 200),
+    source: String(body.source || "Direct").slice(0, 30),
     items: items.map((item) => ({
       name: String(item.name).slice(0, 80),
       price: Number(item.price) || 0,
@@ -118,7 +119,9 @@ app.get("/api/site-url", (req, res) => {
 });
 
 app.get("/qr.png", async (req, res) => {
-  const target = req.query.url || siteUrl(req);
+  const baseUrl = req.query.url || siteUrl(req);
+  // Append ?source=qr so the ordering page knows it was opened via QR scan
+  const target = baseUrl.includes("?") ? baseUrl + "&source=qr" : baseUrl + "?source=qr";
   try {
     const png = await QRCode.toBuffer(target, {
       width: 600,

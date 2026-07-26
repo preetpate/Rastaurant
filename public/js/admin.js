@@ -9,6 +9,8 @@
   let filter = "all";
   let query = "";
   let timer = null;
+  let knownIds = new Set();
+  let firstLoad = true;
 
   const money = (n) => "$" + Number(n).toFixed(2);
 
@@ -24,12 +26,52 @@
     try {
       const res = await fetch("/api/orders");
       if (!res.ok) throw new Error("status " + res.status);
-      orders = await res.json();
+      const fresh = await res.json();
       $("#connError").hidden = true;
+
+      // Detect new orders after first load
+      if (!firstLoad) {
+        fresh.forEach((o) => {
+          if (!knownIds.has(o.id)) {
+            playNotification();
+            showToast("🍽️ New order #" + o.number + " from " + o.customer);
+          }
+        });
+      }
+
+      orders = fresh;
+      orders.forEach((o) => knownIds.add(o.id));
+      firstLoad = false;
       render();
     } catch (err) {
       $("#connError").hidden = false;
     }
+  }
+
+  function playNotification() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      [523, 659, 784].forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain); gain.connect(ctx.destination);
+        osc.frequency.value = freq;
+        osc.type = "sine";
+        gain.gain.setValueAtTime(0.18, ctx.currentTime + i * 0.12);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.12 + 0.25);
+        osc.start(ctx.currentTime + i * 0.12);
+        osc.stop(ctx.currentTime + i * 0.12 + 0.25);
+      });
+    } catch (e) { /* audio not supported */ }
+  }
+
+  function showToast(msg) {
+    const t = document.createElement("div");
+    t.className = "admin-toast";
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.classList.add("show"), 10);
+    setTimeout(() => { t.classList.remove("show"); setTimeout(() => t.remove(), 400); }, 4000);
   }
 
   function visible() {
@@ -66,14 +108,17 @@
       .join("");
 
     const actions = [];
-    if (o.status === "new") actions.push('<button class="btn" data-status="preparing" data-id="' + o.id + '">Start preparing</button>');
-    if (o.status === "preparing") actions.push('<button class="btn" data-status="served" data-id="' + o.id + '">Mark served</button>');
+    if (o.status === "new") actions.push('<button class="btn" data-status="preparing" data-id="' + o.id + '">▶ Start preparing</button>');
+    if (o.status === "preparing") actions.push('<button class="btn" data-status="served" data-id="' + o.id + '">✓ Mark served</button>');
     if (o.status !== "cancelled" && o.status !== "served") {
-      actions.push('<button class="btn danger" data-status="cancelled" data-id="' + o.id + '">Cancel</button>');
+      actions.push('<button class="btn danger" data-status="cancelled" data-id="' + o.id + '">✕ Cancel</button>');
     }
     if (o.status === "served" || o.status === "cancelled") {
-      actions.push('<button class="btn" data-status="new" data-id="' + o.id + '">Reopen</button>');
+      actions.push('<button class="btn" data-status="new" data-id="' + o.id + '">↩ Reopen</button>');
     }
+
+    const sourceIcon = (o.source === "QR Scan") ? "📱 QR Scan" : "🌐 Direct";
+    const sourceCls = (o.source === "QR Scan") ? "source-qr" : "source-direct";
 
     return (
       '<article class="order status-' + o.status + '">' +
@@ -82,12 +127,15 @@
             '<div class="order-no">#' + o.number + "</div>" +
             '<div class="order-meta">' + o.table + " &middot; " + timeAgo(o.createdAt) + "</div>" +
           "</div>" +
-          '<span class="pill ' + o.status + '">' + o.status + "</span>" +
+          '<div class="order-top-right">' +
+            '<span class="pill ' + o.status + '">' + o.status + "</span>" +
+            '<span class="source-badge ' + sourceCls + '">' + sourceIcon + "</span>" +
+          "</div>" +
         "</div>" +
         '<div class="order-customer">' + o.customer +
           (o.phone ? ' <span>&middot; ' + o.phone + "</span>" : "") + "</div>" +
         '<ul class="order-items">' + items + "</ul>" +
-        (o.notes ? '<p class="order-notes">Note: ' + o.notes + "</p>" : "") +
+        (o.notes ? '<p class="order-notes">📝 ' + o.notes + "</p>" : "") +
         '<div class="order-total"><span>Total</span><strong>' + money(o.total) + "</strong></div>" +
         '<div class="order-actions">' + actions.join("") + "</div>" +
       "</article>"
