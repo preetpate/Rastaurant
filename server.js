@@ -78,6 +78,8 @@ app.post("/api/orders", (req, res) => {
     table: String(body.table || "Takeaway").slice(0, 30),
     notes: String(body.notes || "").slice(0, 200),
     source: String(body.source || "Direct").slice(0, 30),
+    orderType: String(body.orderType || "Dine-In").slice(0, 20),
+    deliveryAddress: String(body.deliveryAddress || "").slice(0, 300),
     items: items.map((item) => ({
       name: String(item.name).slice(0, 80),
       price: Number(item.price) || 0,

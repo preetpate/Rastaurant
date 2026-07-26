@@ -119,6 +119,8 @@
 
     const sourceIcon = (o.source === "QR Scan") ? "📱 QR Scan" : "🌐 Direct";
     const sourceCls = (o.source === "QR Scan") ? "source-qr" : "source-direct";
+    const typeMap = { "Dine-In": ["🍽️ Dine-In","type-dinein"], "Takeaway": ["📦 Takeaway","type-takeaway"], "Delivery": ["🛵 Delivery","type-delivery"] };
+    const typeInfo = typeMap[o.orderType] || ["🍽️ Dine-In","type-dinein"];
 
     return (
       '<article class="order status-' + o.status + '">' +
@@ -130,12 +132,14 @@
           '<div class="order-top-right">' +
             '<span class="pill ' + o.status + '">' + o.status + "</span>" +
             '<span class="source-badge ' + sourceCls + '">' + sourceIcon + "</span>" +
+            '<span class="type-badge ' + typeInfo[1] + '">' + typeInfo[0] + "</span>" +
           "</div>" +
         "</div>" +
         '<div class="order-customer">' + o.customer +
           (o.phone ? ' <span>&middot; ' + o.phone + "</span>" : "") + "</div>" +
         '<ul class="order-items">' + items + "</ul>" +
         (o.notes ? '<p class="order-notes">📝 ' + o.notes + "</p>" : "") +
+        (o.deliveryAddress ? '<p class="order-notes">📍 ' + o.deliveryAddress + "</p>" : "") +
         '<div class="order-total"><span>Total</span><strong>' + money(o.total) + "</strong></div>" +
         '<div class="order-actions">' + actions.join("") + "</div>" +
       "</article>"

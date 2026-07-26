@@ -155,3 +155,9 @@ code { background: rgba(255,255,255,.08); padding: .1rem .35rem; border-radius: 
 .stat-card:nth-child(3) { border-top: 2px solid var(--green); }
 .stat-card:nth-child(4) { border-top: 2px solid #a78bfa; }
 .stat-card:nth-child(4) .stat-value { color: #a78bfa; }
+
+/* Order type badges */
+.type-badge { font-size:.68rem; padding:.18rem .55rem; border-radius:999px; font-weight:500; border:1px solid; }
+.type-dinein  { color:#62a8e0; border-color:rgba(98,168,224,.4); background:rgba(98,168,224,.1); }
+.type-takeaway{ color:#a78bfa; border-color:rgba(167,139,250,.4); background:rgba(167,139,250,.1); }
+.type-delivery{ color:#6fbf5b; border-color:rgba(111,191,91,.4); background:rgba(111,191,91,.1); }

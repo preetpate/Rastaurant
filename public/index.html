@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Prime Restaurant — Modern Indian Kitchen</title>
-<meta name="description" content="Prime Restaurant is a modern Indian kitchen serving spice-forward, seasonal plates. Book a table, explore our menu, and find us downtown." />
-<meta property="og:title" content="Prime Restaurant — Modern Indian Kitchen" />
-<meta property="og:description" content="Spice-forward, seasonal plates in the heart of downtown." />
+<title>Prime Restaurant — Italian · Punjabi · Gujarati · Mexican</title>
+<meta name="description" content="Prime Restaurant — Dine in, Takeaway & Delivery. Italian, Punjabi, Gujarati aur Mexican cuisine ek hi jagah. QR se order karein seedha apni table se." />
+<meta property="og:title" content="Prime Restaurant" />
+<meta property="og:description" content="Italian · Punjabi · Gujarati · Mexican — ek hi jagah sab kuch." />
 <meta property="og:type" content="restaurant" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="icon" type="image/png" href="assets/favicon.png" />
 <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
+<!-- HEADER -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a class="brand" href="#home">
-      <img class="brand-logo" src="assets/logo-mark.png" alt="Prime Restaurant logo" width="48" height="40" />
-      <span class="brand-text">Prime <em>Restaurant</em></span>
+      <img class="brand-logo" src="assets/logo-mark.png" alt="Prime Restaurant" width="44" height="44" />
+      <div class="brand-text-wrap">
+        <span class="brand-name">Prime Restaurant</span>
+        <span class="brand-tagline">Italian · Punjabi · Gujarati · Mexican</span>
+      </div>
     </a>
-
     <nav class="nav" id="nav" aria-label="Main navigation">
       <ul class="nav-list">
         <li><a href="#about">About</a></li>
@@ -32,9 +35,8 @@
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a class="btn btn-primary nav-cta" href="#menu">Order Online</a>
+      <a class="btn btn-primary nav-cta" href="#menu">Order Now</a>
     </nav>
-
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
@@ -43,272 +45,316 @@
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-media" aria-hidden="true"></div>
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="container hero-content">
-      <p class="eyebrow reveal">Est. 2012 &middot; Downtown</p>
-      <h1 class="reveal">Modern Indian,<br />slow-cooked &amp; seasonal</h1>
-      <p class="lead reveal">Charcoal grills, hand-ground masalas and produce from growers we know by name. Dinner served nightly from 5pm.</p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-primary btn-lg" href="#menu">Order Online</a>
-        <a class="btn btn-ghost btn-lg" href="#reserve">Reserve a Table</a>
-      </div>
-      <p class="hero-qr-hint reveal">📱 Scan QR at your table to order directly</p>
-      <dl class="hero-facts reveal">
-        <div><dt>Hours</dt><dd>Tue–Sun · 5–11pm</dd></div>
-        <div><dt>Phone</dt><dd><a href="tel:+15551234567">(555) 123-4567</a></dd></div>
-        <div><dt>Address</dt><dd>18 Marigold Lane</dd></div>
-      </dl>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <div class="cuisine-flags reveal">
+      <span>🍕 Italian</span>
+      <span>🍛 Punjabi</span>
+      <span>🥘 Gujarati</span>
+      <span>🌮 Mexican</span>
     </div>
-  </section>
+    <h1 class="reveal">Ek Jagah,<br /><em>Chaar Cuisines</em></h1>
+    <p class="hero-lead reveal">Fresh ingredients. Bold flavours. Made with love — every single plate.</p>
+    <div class="hero-actions reveal">
+      <a class="btn btn-primary btn-lg" href="#menu">🍽️ Order Online</a>
+      <a class="btn btn-ghost btn-lg" href="#reserve">📅 Reserve Table</a>
+    </div>
+    <div class="hero-badges reveal">
+      <span class="hero-badge">📱 QR Scan to Order</span>
+      <span class="hero-badge">🛵 Home Delivery Available</span>
+      <span class="hero-badge">⏱️ 20 Min Kitchen Time</span>
+    </div>
+    <dl class="hero-facts reveal">
+      <div><dt>Hours</dt><dd>Daily · 11am–11pm</dd></div>
+      <dt>Phone</dt><dd><a href="tel:+919999999999">+91 99999 99999</a></dd>
+      <div><dt>Since</dt><dd>2026</dd></div>
+    </dl>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="section about" id="about">
-    <div class="container grid-2">
-      <div class="about-images reveal">
-        <img class="about-img-1" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Guests dining in the warmly lit dining room" loading="lazy" />
-        <img class="about-img-2" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=700&q=80" alt="Chef finishing a dish in the open kitchen" loading="lazy" />
-      </div>
-      <div class="about-copy reveal">
-        <p class="eyebrow">Our story</p>
-        <h2>A neighbourhood kitchen with a coastal soul</h2>
-        <p>Prime Restaurant began as a six-seat supper club in a converted garage. Twelve years on, the idea hasn&rsquo;t changed: cook the food we grew up on, with the best of what the season gives us, and serve it like we&rsquo;re feeding family.</p>
-        <p>Everything is made in house &mdash; the paneer, the pickles, the breads pulled from a clay tandoor at the pass. Our wine list leans low-intervention, and our bar leads with tamarind, curry leaf and smoke.</p>
-        <ul class="ticks">
-          <li>House-milled spices, ground every morning</li>
-          <li>Vegan, vegetarian and gluten-free menus</li>
-          <li>Private dining for parties up to 40</li>
-        </ul>
-        <a class="btn btn-outline" href="#reserve">Join us for dinner</a>
+<!-- STATS -->
+<section class="stats-bar">
+  <div class="container stats-grid">
+    <div class="stat reveal"><span class="stat-num" data-count="50">0</span><span class="stat-label">Menu Items</span></div>
+    <div class="stat reveal"><span class="stat-num" data-count="4">0</span><span class="stat-label">Cuisines</span></div>
+    <div class="stat reveal"><span class="stat-num" data-count="500">0</span><span class="stat-label">Happy Guests/Day</span></div>
+    <div class="stat reveal"><span class="stat-num" data-count="2026">0</span><span class="stat-label">Est. Year</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-images reveal">
+      <img class="about-main" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Prime Restaurant dining hall" loading="lazy" />
+      <img class="about-thumb" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=500&q=80" alt="Chef at work" loading="lazy" />
+    </div>
+    <div class="about-copy reveal">
+      <p class="eyebrow">Hamari Kahani</p>
+      <h2>Ek Restaurant,<br />Chaar Duniyaen</h2>
+      <p>Prime Restaurant ki shuruat ek sapne se hui — ek aisi jagah banane ka sapna jahan aap Italian pizza bhi khao, Punjabi butter chicken bhi, Gujarati thali bhi aur Mexican tacos bhi. Sab kuch ek hi chatri ke neeche.</p>
+      <p>Har dish fresh ingredients se banti hai, recipes time-tested hain aur har plate mein dil lagakar kaam hota hai.</p>
+      <ul class="feature-list">
+        <li>✅ 100% Fresh Ingredients, Daily</li>
+        <li>✅ Veg &amp; Non-Veg — Alag Preparation</li>
+        <li>✅ Dine-In, Takeaway &amp; Home Delivery</li>
+        <li>✅ QR Table Ordering System</li>
+      </ul>
+      <a class="btn btn-outline" href="#menu">Menu Dekhein →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="section menu-section" id="menu">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Our Menu</p>
+      <h2>Kuch Bhi Order Karein</h2>
+      <p class="section-sub">Dish select karein, cart mein add karein, aur seedha kitchen mein order bhejein.</p>
+    </header>
+
+    <!-- Veg / Non-Veg Filter -->
+    <div class="veg-filter reveal">
+      <button class="veg-filter-btn active" data-filter="all">🍽️ All</button>
+      <button class="veg-filter-btn veg-only" data-filter="veg">🌿 Veg Only</button>
+      <button class="veg-filter-btn nonveg-only" data-filter="nonveg">🍗 Non-Veg Only</button>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="tabs reveal" role="tablist" aria-label="Menu categories">
+      <button class="tab is-active" role="tab" aria-selected="true" data-tab="italian" aria-controls="panel-italian" id="tab-italian">🍕 Italian</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="punjabi" aria-controls="panel-punjabi" id="tab-punjabi">🍛 Punjabi</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="gujarati" aria-controls="panel-gujarati" id="tab-gujarati">🥘 Gujarati</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="mexican" aria-controls="panel-mexican" id="tab-mexican">🌮 Mexican</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="beverages" aria-controls="panel-beverages" id="tab-beverages">🥤 Drinks</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="desserts" aria-controls="panel-desserts" id="tab-desserts">🍰 Desserts</button>
+    </div>
+
+    <div class="menu-panels">
+      <div class="menu-grid" role="tabpanel" id="panel-italian" aria-labelledby="tab-italian" data-panel="italian"></div>
+      <div class="menu-grid" role="tabpanel" id="panel-punjabi" aria-labelledby="tab-punjabi" data-panel="punjabi" hidden></div>
+      <div class="menu-grid" role="tabpanel" id="panel-gujarati" aria-labelledby="tab-gujarati" data-panel="gujarati" hidden></div>
+      <div class="menu-grid" role="tabpanel" id="panel-mexican" aria-labelledby="tab-mexican" data-panel="mexican" hidden></div>
+      <div class="menu-grid" role="tabpanel" id="panel-beverages" aria-labelledby="tab-beverages" data-panel="beverages" hidden></div>
+      <div class="menu-grid" role="tabpanel" id="panel-desserts" aria-labelledby="tab-desserts" data-panel="desserts" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Gallery</p>
+      <h2>Hamare Dishes</h2>
+    </header>
+    <div class="gallery-grid">
+      <figure class="reveal g-tall"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80" alt="Margherita Pizza" loading="lazy" /></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80" alt="Butter Chicken" loading="lazy" /></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80" alt="Tacos" loading="lazy" /></figure>
+      <figure class="reveal g-wide"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Restaurant interior" loading="lazy" /></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Dal Makhani" loading="lazy" /></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=800&q=80" alt="Churros" loading="lazy" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section" id="reviews">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Customer Reviews</p>
+      <h2>Log Kya Kehte Hain</h2>
+    </header>
+    <div class="review-slider reveal">
+      <div class="review-track" id="reviewTrack"></div>
+      <div class="review-controls">
+        <button class="round-btn" id="reviewPrev" aria-label="Previous">&#8592;</button>
+        <div class="review-dots" id="reviewDots"></div>
+        <button class="round-btn" id="reviewNext" aria-label="Next">&#8594;</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div class="container stats-grid">
-      <div class="stat reveal"><span class="stat-num" data-count="12">0</span><span class="stat-label">Years serving</span></div>
-      <div class="stat reveal"><span class="stat-num" data-count="48">0</span><span class="stat-label">Dishes on the menu</span></div>
-      <div class="stat reveal"><span class="stat-num" data-count="96">0</span><span class="stat-label">% guests return</span></div>
-      <div class="stat reveal"><span class="stat-num" data-count="3">0</span><span class="stat-label">Culinary awards</span></div>
-    </div>
-  </section>
-
-  <!-- MENU -->
-  <section class="section menu" id="menu">
-    <div class="container">
-      <header class="section-head reveal">
-        <p class="eyebrow">The menu</p>
-        <h2>Small plates, big fire</h2>
-        <p class="section-sub">Tap <strong>Add</strong> on any dish to build your order &mdash; then send it straight to our kitchen.</p>
-      </header>
-
-      <div class="tabs reveal" role="tablist" aria-label="Menu categories">
-        <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-italian" id="tab-italian" data-tab="italian">🍕 Italian</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-punjabi" id="tab-punjabi" data-tab="punjabi">🍛 Punjabi</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-mexican" id="tab-mexican" data-tab="mexican">🌮 Mexican</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-drinks" id="tab-drinks" data-tab="drinks">🥤 Drinks</button>
+<!-- DELIVERY SECTION -->
+<section class="section delivery-section" id="delivery">
+  <div class="container">
+    <div class="delivery-grid">
+      <div class="delivery-card reveal">
+        <div class="delivery-icon">🍽️</div>
+        <h3>Dine-In</h3>
+        <p>Hamare aaram-deh restaurant mein khana enjoy karein. Table reservation available.</p>
+        <a class="btn btn-outline" href="#reserve">Table Book Karein</a>
       </div>
-
-      <div class="menu-panels">
-        <div class="menu-grid" role="tabpanel" id="panel-italian" aria-labelledby="tab-italian" data-panel="italian"></div>
-        <div class="menu-grid" role="tabpanel" id="panel-punjabi" aria-labelledby="tab-punjabi" data-panel="punjabi" hidden></div>
-        <div class="menu-grid" role="tabpanel" id="panel-mexican" aria-labelledby="tab-mexican" data-panel="mexican" hidden></div>
-        <div class="menu-grid" role="tabpanel" id="panel-drinks" aria-labelledby="tab-drinks" data-panel="drinks" hidden></div>
+      <div class="delivery-card reveal">
+        <div class="delivery-icon">🛵</div>
+        <h3>Home Delivery</h3>
+        <p>Ghar baithe order karein — 30-45 minute mein fresh hot food aapke darwaze par.</p>
+        <a class="btn btn-outline" href="#menu">Abhi Order Karein</a>
+      </div>
+      <div class="delivery-card reveal">
+        <div class="delivery-icon">📦</div>
+        <h3>Takeaway</h3>
+        <p>Order karein, hum pack karenge. Apni suvidha se collect kar lein.</p>
+        <a class="btn btn-outline" href="#menu">Takeaway Order</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- GALLERY -->
-  <section class="section gallery" id="gallery">
-    <div class="container">
-      <header class="section-head reveal">
-        <p class="eyebrow">Gallery</p>
-        <h2>A look inside</h2>
-      </header>
-      <div class="gallery-grid">
-        <figure class="reveal"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80" alt="Butter chicken served in a copper bowl" loading="lazy" /></figure>
-        <figure class="reveal"><img src="https://images.unsplash.com/photo-1543826173-70651703c5a4?auto=format&fit=crop&w=800&q=80" alt="Charcoal grilled skewers" loading="lazy" /></figure>
-        <figure class="reveal"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Dining room with warm pendant lighting" loading="lazy" /></figure>
-        <figure class="reveal"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" alt="Dessert plated with berries" loading="lazy" /></figure>
-        <figure class="reveal"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="Bar counter with guests" loading="lazy" /></figure>
-        <figure class="reveal"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80" alt="Seared dish on a dark plate" loading="lazy" /></figure>
-      </div>
+<!-- RESERVATION -->
+<section class="section reserve-section" id="reserve">
+  <div class="container reserve-inner">
+    <div class="reserve-copy reveal">
+      <p class="eyebrow">Reservation</p>
+      <h2>Table Book Karein</h2>
+      <p>Weekends par jaldi book ho jaate hain. Advance mein book karein aur special evening enjoy karein.</p>
+      <ul class="feature-list">
+        <li>📞 9+ log? Seedha call karein</li>
+        <li>⏰ Table 15 min hold kiya jaata hai</li>
+        <li>❌ 4 ghante pehle free cancellation</li>
+      </ul>
+      <p class="reserve-phone">📞 <a href="tel:+919999999999">+91 99999 99999</a></p>
     </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="section reviews" id="reviews">
-    <div class="container">
-      <header class="section-head reveal">
-        <p class="eyebrow">Reviews</p>
-        <h2>What guests say</h2>
-      </header>
-      <div class="review-slider reveal">
-        <div class="review-track" id="reviewTrack"></div>
-        <div class="review-controls">
-          <button class="round-btn" id="reviewPrev" aria-label="Previous review">&#8592;</button>
-          <div class="review-dots" id="reviewDots"></div>
-          <button class="round-btn" id="reviewNext" aria-label="Next review">&#8594;</button>
-        </div>
+    <form class="reserve-form card reveal" id="reserveForm" novalidate>
+      <div class="field">
+        <label for="name">Poora Naam</label>
+        <input type="text" id="name" name="name" placeholder="Raj Patel" required />
+        <span class="error" data-error-for="name"></span>
       </div>
-    </div>
-  </section>
-
-  <!-- RESERVATION -->
-  <section class="section reserve" id="reserve">
-    <div class="container grid-2 reserve-inner">
-      <div class="reserve-copy reveal">
-        <p class="eyebrow">Reservations</p>
-        <h2>Book your table</h2>
-        <p>We hold a handful of walk-in seats at the bar each night, but the dining room books out fast &mdash; especially Thursday through Saturday.</p>
-        <ul class="ticks">
-          <li>Parties of 9+ &mdash; please call us directly</li>
-          <li>We hold your table for 15 minutes</li>
-          <li>Free cancellation up to 4 hours before</li>
-        </ul>
-        <p class="reserve-phone">Prefer to talk? <a href="tel:+15551234567">(555) 123-4567</a></p>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="aap@example.com" required />
+        <span class="error" data-error-for="email"></span>
       </div>
-
-      <form class="reserve-form card reveal" id="reserveForm" novalidate>
+      <div class="field-row">
         <div class="field">
-          <label for="name">Full name</label>
-          <input type="text" id="name" name="name" placeholder="Priya Patel" required />
-          <span class="error" data-error-for="name"></span>
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required />
+          <span class="error" data-error-for="date"></span>
         </div>
         <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required />
-          <span class="error" data-error-for="email"></span>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="date">Date</label>
-            <input type="date" id="date" name="date" required />
-            <span class="error" data-error-for="date"></span>
-          </div>
-          <div class="field">
-            <label for="time">Time</label>
-            <select id="time" name="time" required>
-              <option value="">Select…</option>
-              <option>5:00 PM</option><option>5:30 PM</option><option>6:00 PM</option>
-              <option>6:30 PM</option><option>7:00 PM</option><option>7:30 PM</option>
-              <option>8:00 PM</option><option>8:30 PM</option><option>9:00 PM</option>
-            </select>
-            <span class="error" data-error-for="time"></span>
-          </div>
-          <div class="field">
-            <label for="guests">Guests</label>
-            <select id="guests" name="guests" required>
-              <option value="">Select…</option>
-              <option>1</option><option>2</option><option>3</option><option>4</option>
-              <option>5</option><option>6</option><option>7</option><option>8</option>
-            </select>
-            <span class="error" data-error-for="guests"></span>
-          </div>
+          <label for="time">Time</label>
+          <select id="time" name="time" required>
+            <option value="">Chunein…</option>
+            <option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option>
+            <option>2:00 PM</option><option>6:00 PM</option><option>7:00 PM</option>
+            <option>8:00 PM</option><option>9:00 PM</option><option>10:00 PM</option>
+          </select>
+          <span class="error" data-error-for="time"></span>
         </div>
         <div class="field">
-          <label for="notes">Anything we should know? <span class="optional">(optional)</span></label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Allergies, celebrations, seating preferences…"></textarea>
-        </div>
-        <button class="btn btn-primary btn-block" type="submit">Request Reservation</button>
-        <p class="form-success" id="formSuccess" role="status" hidden></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <header class="section-head reveal">
-        <p class="eyebrow">Visit us</p>
-        <h2>Find Prime Restaurant</h2>
-      </header>
-      <div class="contact-grid">
-        <div class="card contact-card reveal">
-          <h3>Address</h3>
-          <p>18 Marigold Lane<br />Downtown, Springfield 62704</p>
-          <h3>Contact</h3>
-          <p><a href="tel:+15551234567">(555) 123-4567</a><br /><a href="mailto:hello@primerestaurant.com">hello@primerestaurant.com</a></p>
-          <h3>Hours</h3>
-          <table class="hours">
-            <tbody>
-              <tr><th scope="row">Monday</th><td>Closed</td></tr>
-              <tr><th scope="row">Tue – Thu</th><td>5:00pm – 10:00pm</td></tr>
-              <tr><th scope="row">Fri – Sat</th><td>5:00pm – 11:00pm</td></tr>
-              <tr><th scope="row">Sunday</th><td>4:00pm – 9:00pm</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="map-wrap card reveal">
-          <iframe
-            title="Map to Prime Restaurant"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-89.66%2C39.79%2C-89.63%2C39.81&amp;layer=mapnik"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <label for="guests">Guests</label>
+          <select id="guests" name="guests" required>
+            <option value="">Chunein…</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+          </select>
+          <span class="error" data-error-for="guests"></span>
         </div>
       </div>
+      <div class="field">
+        <label for="notes">Koi khaas baat? <span class="optional">(optional)</span></label>
+        <textarea id="notes" name="notes" rows="2" placeholder="Allergy, birthday, seat preference…"></textarea>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Reservation Bhejein 📅</button>
+      <p class="form-success" id="formSuccess" role="status" hidden></p>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Hamare Paas Aayein</p>
+      <h2>Prime Restaurant</h2>
+    </header>
+    <div class="contact-grid">
+      <div class="card contact-card reveal">
+        <h3>📍 Address</h3>
+        <p>18 Main Street<br />Your City, India</p>
+        <h3>📞 Contact</h3>
+        <p><a href="tel:+919999999999">+91 99999 99999</a><br /><a href="mailto:hello@primerestaurant.in">hello@primerestaurant.in</a></p>
+        <h3>🕐 Hours</h3>
+        <table class="hours">
+          <tbody>
+            <tr><th>Monday</th><td>Closed</td></tr>
+            <tr><th>Tue – Thu</th><td>11am – 10pm</td></tr>
+            <tr><th>Fri – Sat</th><td>11am – 11pm</td></tr>
+            <tr><th>Sunday</th><td>10am – 10pm</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="map-wrap card reveal">
+        <iframe title="Map" src="https://www.openstreetmap.org/export/embed.html?bbox=72.83%2C18.92%2C72.90%2C18.98&layer=mapnik" loading="lazy"></iframe>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 </main>
 
+<!-- FOOTER -->
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <img class="footer-logo" src="assets/logo.png" alt="Prime Restaurant" width="220" height="220" />
-      <p class="muted">Modern Indian kitchen &middot; Downtown Springfield</p>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Prime Restaurant" width="160" height="auto" loading="lazy" />
+      <p>Italian · Punjabi · Gujarati · Mexican</p>
+      <p class="muted">Fresh food, bold flavours, made with love.</p>
     </div>
     <nav aria-label="Footer navigation">
-      <h4>Explore</h4>
+      <h4>Quick Links</h4>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#menu">Menu</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#reserve">Reservations</a></li>
+        <li><a href="#delivery">Delivery</a></li>
+        <li><a href="#reserve">Reservation</a></li>
       </ul>
     </nav>
     <div>
       <h4>Newsletter</h4>
-      <p class="muted">Seasonal menus and supper club invites, once a month.</p>
+      <p class="muted">Special offers aur new dishes — monthly once.</p>
       <form class="news-form" id="newsForm" novalidate>
-        <input type="email" id="newsEmail" aria-label="Email address" placeholder="you@example.com" required />
+        <input type="email" id="newsEmail" aria-label="Email" placeholder="aap@example.com" required />
         <button class="btn btn-primary" type="submit">Join</button>
       </form>
       <p class="form-success" id="newsSuccess" role="status" hidden></p>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>&copy; <span id="year"></span> Prime Restaurant. All rights reserved.</p>
+    <p>© <span id="year"></span> Prime Restaurant. All rights reserved.</p>
     <ul class="social">
       <li><a href="#" aria-label="Instagram">Instagram</a></li>
       <li><a href="#" aria-label="Facebook">Facebook</a></li>
-      <li><a href="#" aria-label="X">X</a></li>
     </ul>
   </div>
 </footer>
 
-<!-- CART -->
-<button class="cart-fab" id="cartFab" aria-label="Open your order">
-  <span class="cart-fab-icon">&#128722;</span>
+<!-- CART FAB -->
+<button class="cart-fab" id="cartFab" aria-label="Open order">
+  <span>🛒</span>
   <span class="cart-count" id="cartCount">0</span>
 </button>
 
 <div class="cart-backdrop" id="cartBackdrop" hidden></div>
 <aside class="cart-panel" id="cartPanel" aria-label="Your order" hidden>
   <div class="cart-head">
-    <h3>Your order</h3>
-    <button class="cart-close" id="cartClose" aria-label="Close order panel">&times;</button>
+    <h3>Aapka Order</h3>
+    <button class="cart-close" id="cartClose" aria-label="Close">&times;</button>
   </div>
-
   <div class="cart-body" id="cartBody"></div>
-
   <div class="cart-foot">
     <div class="cart-total"><span>Total</span><strong id="cartTotal">₹0.00</strong></div>
     <form class="order-form" id="orderForm" novalidate>
       <div class="field">
-        <label for="orderName">Name</label>
-        <input type="text" id="orderName" placeholder="Your name" required />
+        <label for="orderName">Naam</label>
+        <input type="text" id="orderName" placeholder="Aapka naam" required />
       </div>
       <div class="field-row two">
         <div class="field">
@@ -316,27 +362,38 @@
           <input type="tel" id="orderPhone" placeholder="98765 43210" required />
         </div>
         <div class="field">
-          <label for="orderTable">Table / Type</label>
-          <select id="orderTable">
-            <option>Table 1</option><option>Table 2</option><option>Table 3</option>
-            <option>Table 4</option><option>Table 5</option><option>Table 6</option>
-            <option>Takeaway</option><option>Delivery</option>
+          <label for="orderType">Order Type</label>
+          <select id="orderType">
+            <option value="Dine-In">🍽️ Dine-In</option>
+            <option value="Takeaway">📦 Takeaway</option>
+            <option value="Delivery">🛵 Delivery</option>
           </select>
         </div>
       </div>
+      <div class="field" id="tableField">
+        <label for="orderTable">Table</label>
+        <select id="orderTable">
+          <option>Table 1</option><option>Table 2</option><option>Table 3</option>
+          <option>Table 4</option><option>Table 5</option><option>Table 6</option>
+          <option>Table 7</option><option>Table 8</option><option>Table 9</option><option>Table 10</option>
+        </select>
+      </div>
+      <div class="field" id="addressField" style="display:none">
+        <label for="orderAddress">Delivery Address</label>
+        <textarea id="orderAddress" rows="2" placeholder="Ghar ka address likhein…"></textarea>
+      </div>
       <div class="field">
         <label for="orderNotes">Notes <span class="optional">(optional)</span></label>
-        <input type="text" id="orderNotes" placeholder="Less spicy, no onion…" />
+        <input type="text" id="orderNotes" placeholder="Kam spicy, no onion…" />
       </div>
       <p class="cart-error" id="cartError" hidden></p>
-      <button class="btn btn-primary btn-block" type="submit" id="placeOrderBtn">Place Order</button>
+      <button class="btn btn-primary btn-block" type="submit" id="placeOrderBtn">Order Place Karein 🚀</button>
     </form>
   </div>
 </aside>
 
 <div class="toast" id="toast" hidden></div>
-
-<button class="to-top" id="toTop" aria-label="Back to top" hidden>&#8593;</button>
+<button class="to-top" id="toTop" aria-label="Back to top" hidden>↑</button>
 
 <script src="js/main.js"></script>
 <script src="js/order.js"></script>
