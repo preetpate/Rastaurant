@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Prime Restaurant — Italian · Punjabi · Gujarati · Mexican</title>
-<meta name="description" content="Prime Restaurant — Dine in, Takeaway & Delivery. Italian, Punjabi, Gujarati aur Mexican cuisine ek hi jagah. QR se order karein seedha apni table se." />
-<meta property="og:title" content="Prime Restaurant" />
-<meta property="og:description" content="Italian · Punjabi · Gujarati · Mexican — ek hi jagah sab kuch." />
-<meta property="og:type" content="restaurant" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="icon" type="image/png" href="assets/favicon.png" />
-<link rel="stylesheet" href="css/styles.css" />
+<meta name="description" content="Prime Restaurant — Dine In, Takeaway & Delivery. 4 cuisines, 50+ dishes, QR ordering."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- HEADER -->
+<!-- ════ HEADER ════ -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a class="brand" href="#home">
-      <img class="brand-logo" src="assets/logo-mark.png" alt="Prime Restaurant" width="44" height="44" />
-      <div class="brand-text-wrap">
+      <img class="brand-logo" src="assets/logo-mark.png" alt="Prime Restaurant" width="40" height="40"/>
+      <div>
         <span class="brand-name">Prime Restaurant</span>
-        <span class="brand-tagline">Italian · Punjabi · Gujarati · Mexican</span>
+        <span class="brand-sub">Italian · Punjabi · Gujarati · Mexican</span>
       </div>
     </a>
     <nav class="nav" id="nav" aria-label="Main navigation">
@@ -45,244 +42,286 @@
 
 <main id="main">
 
-<!-- HERO -->
+<!-- ════ HERO ════ -->
 <section class="hero" id="home">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-content">
-    <div class="cuisine-flags reveal">
-      <span>🍕 Italian</span>
-      <span>🍛 Punjabi</span>
-      <span>🥘 Gujarati</span>
-      <span>🌮 Mexican</span>
+    <div class="hero-chips reveal">
+      <span class="hero-chip">🍕 Italian</span>
+      <span class="hero-chip">🍛 Punjabi</span>
+      <span class="hero-chip">🥘 Gujarati</span>
+      <span class="hero-chip">🌮 Mexican</span>
     </div>
-    <h1 class="reveal">Ek Jagah,<br /><em>Chaar Cuisines</em></h1>
-    <p class="hero-lead reveal">Fresh ingredients. Bold flavours. Made with love — every single plate.</p>
+    <h1 class="hero-title reveal">
+      Ek Jagah,
+      <span class="accent">Chaar Zaayke</span>
+    </h1>
+    <p class="hero-desc reveal">Fresh ingredients. Bold flavours. Har dish mein dil lagate hain hum.</p>
     <div class="hero-actions reveal">
-      <a class="btn btn-primary btn-lg" href="#menu">🍽️ Order Online</a>
-      <a class="btn btn-ghost btn-lg" href="#reserve">📅 Reserve Table</a>
+      <a class="btn btn-primary btn-lg" href="#menu">🍽️ Menu Dekhein</a>
+      <a class="btn btn-outline-white btn-lg" href="#reserve">📅 Table Book Karein</a>
     </div>
-    <div class="hero-badges reveal">
-      <span class="hero-badge">📱 QR Scan to Order</span>
-      <span class="hero-badge">🛵 Home Delivery Available</span>
-      <span class="hero-badge">⏱️ 20 Min Kitchen Time</span>
+    <div class="hero-pills reveal">
+      <span class="hero-pill">📱 QR Scan to Order</span>
+      <span class="hero-pill">🛵 Home Delivery</span>
+      <span class="hero-pill">⏱️ 20 Min Ready</span>
+      <span class="hero-pill">🌿 Veg &amp; Non-Veg</span>
     </div>
     <dl class="hero-facts reveal">
-      <div><dt>Hours</dt><dd>Daily · 11am–11pm</dd></div>
-      <dt>Phone</dt><dd><a href="tel:+919999999999">+91 99999 99999</a></dd>
-      <div><dt>Since</dt><dd>2026</dd></div>
+      <div class="hero-fact"><dt>Timing</dt><dd>Daily · 11am – 11pm</dd></div>
+      <div class="hero-fact"><dt>Phone</dt><dd><a href="tel:+919999999999">+91 99999 99999</a></dd></div>
+      <div class="hero-fact"><dt>Since</dt><dd>2026</dd></div>
     </dl>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats-bar">
-  <div class="container stats-grid">
-    <div class="stat reveal"><span class="stat-num" data-count="50">0</span><span class="stat-label">Menu Items</span></div>
-    <div class="stat reveal"><span class="stat-num" data-count="4">0</span><span class="stat-label">Cuisines</span></div>
-    <div class="stat reveal"><span class="stat-num" data-count="500">0</span><span class="stat-label">Happy Guests/Day</span></div>
-    <div class="stat reveal"><span class="stat-num" data-count="2026">0</span><span class="stat-label">Est. Year</span></div>
+<!-- ════ FEATURES STRIP ════ -->
+<div class="features-strip">
+  <div class="container features-inner">
+    <span class="feature-item"><span class="fi">🍕</span> Authentic Italian</span>
+    <span class="feature-item"><span class="fi">🍛</span> Desi Punjabi</span>
+    <span class="feature-item"><span class="fi">🥘</span> Ghar Jaisi Gujarati</span>
+    <span class="feature-item"><span class="fi">🌮</span> Spicy Mexican</span>
+    <span class="feature-item"><span class="fi">🛵</span> Fast Delivery</span>
+    <span class="feature-item"><span class="fi">🌿</span> Veg &amp; Non-Veg</span>
+  </div>
+</div>
+
+<!-- ════ STATS ════ -->
+<section class="stats-section">
+  <div class="container stats-row">
+    <div class="stat-box reveal"><span class="stat-num" data-count="50">0</span><span class="stat-label">Menu Items</span></div>
+    <div class="stat-box reveal"><span class="stat-num" data-count="4">0</span><span class="stat-label">Cuisines</span></div>
+    <div class="stat-box reveal"><span class="stat-num" data-count="500">0</span><span class="stat-label">Happy Guests / Day</span></div>
+    <div class="stat-box reveal"><span class="stat-num" data-count="2026">0</span><span class="stat-label">Est. Year</span></div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section about" id="about">
-  <div class="container about-grid">
-    <div class="about-images reveal">
-      <img class="about-main" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Prime Restaurant dining hall" loading="lazy" />
-      <img class="about-thumb" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=500&q=80" alt="Chef at work" loading="lazy" />
+<!-- ════ ABOUT ════ -->
+<section class="section about-section" id="about">
+  <div class="container about-wrap">
+    <div class="about-visual reveal">
+      <img class="about-img-main" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85" alt="Prime Restaurant dining hall" loading="lazy"/>
+      <div class="about-badge">
+        <span class="num">2026</span>
+        <span class="lbl">Est. Year</span>
+      </div>
     </div>
     <div class="about-copy reveal">
-      <p class="eyebrow">Hamari Kahani</p>
-      <h2>Ek Restaurant,<br />Chaar Duniyaen</h2>
-      <p>Prime Restaurant ki shuruat ek sapne se hui — ek aisi jagah banane ka sapna jahan aap Italian pizza bhi khao, Punjabi butter chicken bhi, Gujarati thali bhi aur Mexican tacos bhi. Sab kuch ek hi chatri ke neeche.</p>
-      <p>Har dish fresh ingredients se banti hai, recipes time-tested hain aur har plate mein dil lagakar kaam hota hai.</p>
-      <ul class="feature-list">
-        <li>✅ 100% Fresh Ingredients, Daily</li>
-        <li>✅ Veg &amp; Non-Veg — Alag Preparation</li>
-        <li>✅ Dine-In, Takeaway &amp; Home Delivery</li>
-        <li>✅ QR Table Ordering System</li>
+      <span class="eyebrow">Hamari Kahani</span>
+      <h2 class="section-title">Ek Restaurant,<br/><span>Chaar Duniyaen</span></h2>
+      <p style="color:var(--text-mid);line-height:1.8;margin-top:.75rem">Prime Restaurant ka sapna tha ek aisi jagah banana jahan aap Italian pizza bhi khao, Punjabi butter chicken bhi, authentic Gujarati thali bhi aur spicy Mexican tacos bhi — sab ek hi chhat ke neeche.</p>
+      <p style="color:var(--text-mid);line-height:1.8">Har dish fresh ingredients se, recipes time-tested hain aur har plate mein dil lagakar kaam hota hai.</p>
+      <ul class="check-list">
+        <li>100% Fresh Ingredients, Roz</li>
+        <li>Veg &amp; Non-Veg — Alag Preparation</li>
+        <li>Dine-In, Takeaway &amp; Home Delivery</li>
+        <li>QR Table Ordering System</li>
       </ul>
-      <a class="btn btn-outline" href="#menu">Menu Dekhein →</a>
+      <a class="btn btn-primary" href="#menu">Menu Dekhein →</a>
     </div>
   </div>
 </section>
 
-<!-- MENU -->
+<!-- ════ MENU ════ -->
 <section class="section menu-section" id="menu">
   <div class="container">
-    <header class="section-head reveal">
-      <p class="eyebrow">Our Menu</p>
-      <h2>Kuch Bhi Order Karein</h2>
-      <p class="section-sub">Dish select karein, cart mein add karein, aur seedha kitchen mein order bhejein.</p>
-    </header>
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">Our Menu</span>
+      <h2 class="section-title">Kuch Bhi <span>Order Karein</span></h2>
+      <p class="section-sub">Dish select karein, cart mein add karein, extras choose karein — aur seedha kitchen mein bhejein.</p>
+    </div>
 
     <!-- Veg / Non-Veg Filter -->
-    <div class="veg-filter reveal">
-      <button class="veg-filter-btn active" data-filter="all">🍽️ All</button>
-      <button class="veg-filter-btn veg-only" data-filter="veg">🌿 Veg Only</button>
-      <button class="veg-filter-btn nonveg-only" data-filter="nonveg">🍗 Non-Veg Only</button>
+    <div class="filter-bar reveal">
+      <div class="filter-group">
+        <button class="filt-btn active" data-filter="all">🍽️ All Items</button>
+        <button class="filt-btn" data-filter="veg" id="vegBtn">🌿 Veg Only</button>
+        <button class="filt-btn" data-filter="nonveg" id="nonvegBtn">🍗 Non-Veg</button>
+      </div>
     </div>
 
-    <!-- Category Tabs -->
-    <div class="tabs reveal" role="tablist" aria-label="Menu categories">
-      <button class="tab is-active" role="tab" aria-selected="true" data-tab="italian" aria-controls="panel-italian" id="tab-italian">🍕 Italian</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="punjabi" aria-controls="panel-punjabi" id="tab-punjabi">🍛 Punjabi</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="gujarati" aria-controls="panel-gujarati" id="tab-gujarati">🥘 Gujarati</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="mexican" aria-controls="panel-mexican" id="tab-mexican">🌮 Mexican</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="beverages" aria-controls="panel-beverages" id="tab-beverages">🥤 Drinks</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="desserts" aria-controls="panel-desserts" id="tab-desserts">🍰 Desserts</button>
+    <!-- Cuisine Tabs -->
+    <div class="cuisine-tabs reveal">
+      <button class="ctab active" data-tab="italian">🍕 Italian</button>
+      <button class="ctab" data-tab="punjabi">🍛 Punjabi</button>
+      <button class="ctab" data-tab="gujarati">🥘 Gujarati</button>
+      <button class="ctab" data-tab="mexican">🌮 Mexican</button>
+      <button class="ctab" data-tab="beverages">🥤 Drinks</button>
+      <button class="ctab" data-tab="desserts">🍰 Desserts</button>
     </div>
 
-    <div class="menu-panels">
-      <div class="menu-grid" role="tabpanel" id="panel-italian" aria-labelledby="tab-italian" data-panel="italian"></div>
-      <div class="menu-grid" role="tabpanel" id="panel-punjabi" aria-labelledby="tab-punjabi" data-panel="punjabi" hidden></div>
-      <div class="menu-grid" role="tabpanel" id="panel-gujarati" aria-labelledby="tab-gujarati" data-panel="gujarati" hidden></div>
-      <div class="menu-grid" role="tabpanel" id="panel-mexican" aria-labelledby="tab-mexican" data-panel="mexican" hidden></div>
-      <div class="menu-grid" role="tabpanel" id="panel-beverages" aria-labelledby="tab-beverages" data-panel="beverages" hidden></div>
-      <div class="menu-grid" role="tabpanel" id="panel-desserts" aria-labelledby="tab-desserts" data-panel="desserts" hidden></div>
-    </div>
+    <!-- Menu Panels -->
+    <div id="panel-italian" class="menu-grid" data-panel="italian"></div>
+    <div id="panel-punjabi" class="menu-grid" data-panel="punjabi" hidden></div>
+    <div id="panel-gujarati" class="menu-grid" data-panel="gujarati" hidden></div>
+    <div id="panel-mexican" class="menu-grid" data-panel="mexican" hidden></div>
+    <div id="panel-beverages" class="menu-grid" data-panel="beverages" hidden></div>
+    <div id="panel-desserts" class="menu-grid" data-panel="desserts" hidden></div>
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- ════ GALLERY ════ -->
 <section class="section gallery-section" id="gallery">
   <div class="container">
-    <header class="section-head reveal">
-      <p class="eyebrow">Gallery</p>
-      <h2>Hamare Dishes</h2>
-    </header>
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;color:var(--saffron)">Gallery</span>
+      <h2 class="section-title" style="color:#fff">Hamare <span>Dishes</span></h2>
+    </div>
     <div class="gallery-grid">
-      <figure class="reveal g-tall"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80" alt="Margherita Pizza" loading="lazy" /></figure>
-      <figure class="reveal"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80" alt="Butter Chicken" loading="lazy" /></figure>
-      <figure class="reveal"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80" alt="Tacos" loading="lazy" /></figure>
-      <figure class="reveal g-wide"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Restaurant interior" loading="lazy" /></figure>
-      <figure class="reveal"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Dal Makhani" loading="lazy" /></figure>
-      <figure class="reveal"><img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=800&q=80" alt="Churros" loading="lazy" /></figure>
+      <div class="gal-item tall reveal"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=85" alt="Margherita Pizza" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=85" alt="Butter Chicken" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=85" alt="Tacos" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=85" alt="Dal Makhani" loading="lazy"/></div>
+      <div class="gal-item wide reveal"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85" alt="Restaurant Interior" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=85" alt="Tiramisu" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=600&q=85" alt="Nachos" loading="lazy"/></div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
+<!-- ════ REVIEWS ════ -->
 <section class="section reviews-section" id="reviews">
   <div class="container">
-    <header class="section-head reveal">
-      <p class="eyebrow">Customer Reviews</p>
-      <h2>Log Kya Kehte Hain</h2>
-    </header>
-    <div class="review-slider reveal">
-      <div class="review-track" id="reviewTrack"></div>
-      <div class="review-controls">
-        <button class="round-btn" id="reviewPrev" aria-label="Previous">&#8592;</button>
-        <div class="review-dots" id="reviewDots"></div>
-        <button class="round-btn" id="reviewNext" aria-label="Next">&#8594;</button>
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">Customer Reviews</span>
+      <h2 class="section-title">Log Kya <span>Kehte Hain</span></h2>
+    </div>
+    <div class="reviews-grid reveal">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Butter Chicken aur Dal Makhani — life mein pehli baar itna authentic khana khaya. Dil khush ho gaya!"</p>
+        <p class="review-author">Rahul Sharma · Google Review</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Gujarati Thali is unmatched — bilkul ghar ka khana jaisi. Best restaurant in town without doubt!"</p>
+        <p class="review-author">Priya Mehta · Zomato Review</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Pizza aur Tacos dono lajawaab the. Family trip tha, sab ne enjoy kiya. Will definitely come back!"</p>
+        <p class="review-author">Vikram &amp; Family · Regular Guest</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"QR se order kiya, 15 minute mein fresh hot food table pe — service is absolutely top class!"</p>
+        <p class="review-author">Neha Patel · Swiggy Review</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DELIVERY SECTION -->
+<!-- ════ DELIVERY ════ -->
 <section class="section delivery-section" id="delivery">
   <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;color:var(--saffron)">Order Kaise Karein</span>
+      <h2 class="section-title" style="color:#fff">Apni <span>Suvidha</span> Chunein</h2>
+    </div>
     <div class="delivery-grid">
       <div class="delivery-card reveal">
-        <div class="delivery-icon">🍽️</div>
+        <div class="del-icon">🍽️</div>
         <h3>Dine-In</h3>
-        <p>Hamare aaram-deh restaurant mein khana enjoy karein. Table reservation available.</p>
-        <a class="btn btn-outline" href="#reserve">Table Book Karein</a>
+        <p>Hamare aaram-deh restaurant mein khana enjoy karein. Table pe baith ke QR scan karo aur order karo.</p>
+        <a class="btn btn-outline-white" href="#reserve">Table Book Karein</a>
       </div>
       <div class="delivery-card reveal">
-        <div class="delivery-icon">🛵</div>
+        <div class="del-icon">🛵</div>
         <h3>Home Delivery</h3>
-        <p>Ghar baithe order karein — 30-45 minute mein fresh hot food aapke darwaze par.</p>
-        <a class="btn btn-outline" href="#menu">Abhi Order Karein</a>
+        <p>Ghar baithe order karein — 30–45 minute mein fresh hot food aapke darwaze par pahuch jaayega.</p>
+        <a class="btn btn-outline-white" href="#menu">Abhi Order Karein</a>
       </div>
       <div class="delivery-card reveal">
-        <div class="delivery-icon">📦</div>
+        <div class="del-icon">📦</div>
         <h3>Takeaway</h3>
-        <p>Order karein, hum pack karenge. Apni suvidha se collect kar lein.</p>
-        <a class="btn btn-outline" href="#menu">Takeaway Order</a>
+        <p>Pehle order karein, hum pack karenge. Apni suvidha se restaurant se collect kar lein.</p>
+        <a class="btn btn-outline-white" href="#menu">Takeaway Order</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESERVATION -->
+<!-- ════ RESERVATION ════ -->
 <section class="section reserve-section" id="reserve">
-  <div class="container reserve-inner">
-    <div class="reserve-copy reveal">
-      <p class="eyebrow">Reservation</p>
-      <h2>Table Book Karein</h2>
-      <p>Weekends par jaldi book ho jaate hain. Advance mein book karein aur special evening enjoy karein.</p>
-      <ul class="feature-list">
-        <li>📞 9+ log? Seedha call karein</li>
-        <li>⏰ Table 15 min hold kiya jaata hai</li>
-        <li>❌ 4 ghante pehle free cancellation</li>
+  <div class="container reserve-wrap">
+    <div class="reserve-info reveal">
+      <span class="eyebrow">Reservation</span>
+      <h2>Table<br/><span style="color:var(--saffron)">Book Karein</span></h2>
+      <p style="color:var(--text-mid);margin-top:.75rem">Weekends jaldi book ho jaate hain. Advance mein book karein aur bina wait kiye special evening enjoy karein.</p>
+      <ul class="info-list">
+        <li><span class="ic">📞</span> 9+ log? Seedha call karein</li>
+        <li><span class="ic">⏰</span> Table 15 min hold kiya jaata hai</li>
+        <li><span class="ic">❌</span> 4 ghante pehle free cancellation</li>
+        <li><span class="ic">🎂</span> Birthday/Anniversary arrangements available</li>
       </ul>
-      <p class="reserve-phone">📞 <a href="tel:+919999999999">+91 99999 99999</a></p>
+      <a class="res-phone" href="tel:+919999999999">📞 +91 99999 99999</a>
     </div>
-    <form class="reserve-form card reveal" id="reserveForm" novalidate>
-      <div class="field">
-        <label for="name">Poora Naam</label>
-        <input type="text" id="name" name="name" placeholder="Raj Patel" required />
-        <span class="error" data-error-for="name"></span>
-      </div>
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="aap@example.com" required />
-        <span class="error" data-error-for="email"></span>
-      </div>
-      <div class="field-row">
+    <div class="form-card reveal">
+      <form id="reserveForm" novalidate>
         <div class="field">
-          <label for="date">Date</label>
-          <input type="date" id="date" name="date" required />
-          <span class="error" data-error-for="date"></span>
+          <label for="name">Poora Naam</label>
+          <input type="text" id="name" name="name" placeholder="Raj Patel" required/>
+          <span class="error" data-error-for="name"></span>
         </div>
         <div class="field">
-          <label for="time">Time</label>
-          <select id="time" name="time" required>
-            <option value="">Chunein…</option>
-            <option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option>
-            <option>2:00 PM</option><option>6:00 PM</option><option>7:00 PM</option>
-            <option>8:00 PM</option><option>9:00 PM</option><option>10:00 PM</option>
-          </select>
-          <span class="error" data-error-for="time"></span>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="aap@example.com" required/>
+          <span class="error" data-error-for="email"></span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required/>
+            <span class="error" data-error-for="date"></span>
+          </div>
+          <div class="field">
+            <label for="time">Time</label>
+            <select id="time" name="time" required>
+              <option value="">Chunein…</option>
+              <option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option>
+              <option>2:00 PM</option><option>7:00 PM</option><option>8:00 PM</option>
+              <option>9:00 PM</option><option>10:00 PM</option>
+            </select>
+            <span class="error" data-error-for="time"></span>
+          </div>
+          <div class="field">
+            <label for="guests">Guests</label>
+            <select id="guests" name="guests" required>
+              <option value="">Chunein…</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+            </select>
+            <span class="error" data-error-for="guests"></span>
+          </div>
         </div>
         <div class="field">
-          <label for="guests">Guests</label>
-          <select id="guests" name="guests" required>
-            <option value="">Chunein…</option>
-            <option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8</option>
-          </select>
-          <span class="error" data-error-for="guests"></span>
+          <label for="notes">Special Request <span class="opt-label">(Optional)</span></label>
+          <textarea id="notes" name="notes" rows="2" placeholder="Allergy, birthday celebration, seating preference…"></textarea>
         </div>
-      </div>
-      <div class="field">
-        <label for="notes">Koi khaas baat? <span class="optional">(optional)</span></label>
-        <textarea id="notes" name="notes" rows="2" placeholder="Allergy, birthday, seat preference…"></textarea>
-      </div>
-      <button class="btn btn-primary btn-block" type="submit">Reservation Bhejein 📅</button>
-      <p class="form-success" id="formSuccess" role="status" hidden></p>
-    </form>
+        <button class="btn btn-primary btn-block" type="submit" style="border-radius:12px;padding:1rem">📅 Reservation Bhejein</button>
+        <p class="form-success" id="formSuccess" role="status" hidden></p>
+      </form>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ════ CONTACT ════ -->
 <section class="section contact-section" id="contact">
   <div class="container">
-    <header class="section-head reveal">
-      <p class="eyebrow">Hamare Paas Aayein</p>
-      <h2>Prime Restaurant</h2>
-    </header>
-    <div class="contact-grid">
-      <div class="card contact-card reveal">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">Hamare Paas Aayein</span>
+      <h2 class="section-title">Prime <span>Restaurant</span></h2>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-box reveal">
         <h3>📍 Address</h3>
-        <p>18 Main Street<br />Your City, India</p>
+        <p>18 Main Street<br/>Your City, India</p>
         <h3>📞 Contact</h3>
-        <p><a href="tel:+919999999999">+91 99999 99999</a><br /><a href="mailto:hello@primerestaurant.in">hello@primerestaurant.in</a></p>
-        <h3>🕐 Hours</h3>
-        <table class="hours">
+        <p><a href="tel:+919999999999">+91 99999 99999</a><br/><a href="mailto:hello@primerestaurant.in">hello@primerestaurant.in</a></p>
+        <h3>🕐 Timing</h3>
+        <table class="hours-table">
           <tbody>
             <tr><th>Monday</th><td>Closed</td></tr>
             <tr><th>Tue – Thu</th><td>11am – 10pm</td></tr>
@@ -291,8 +330,8 @@
           </tbody>
         </table>
       </div>
-      <div class="map-wrap card reveal">
-        <iframe title="Map" src="https://www.openstreetmap.org/export/embed.html?bbox=72.83%2C18.92%2C72.90%2C18.98&layer=mapnik" loading="lazy"></iframe>
+      <div class="map-box reveal">
+        <iframe title="Prime Restaurant Location" src="https://www.openstreetmap.org/export/embed.html?bbox=72.83%2C18.92%2C72.90%2C18.98&layer=mapnik" loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -300,67 +339,71 @@
 
 </main>
 
-<!-- FOOTER -->
+<!-- ════ FOOTER ════ -->
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img src="assets/logo.png" alt="Prime Restaurant" width="160" height="auto" loading="lazy" />
-      <p>Italian · Punjabi · Gujarati · Mexican</p>
-      <p class="muted">Fresh food, bold flavours, made with love.</p>
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <img class="footer-logo" src="assets/logo.png" alt="Prime Restaurant" loading="lazy"/>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.5);margin-top:.5rem">Italian · Punjabi · Gujarati · Mexican</p>
+      <p class="footer-tagline">Fresh food, bold flavours.</p>
     </div>
-    <nav aria-label="Footer navigation">
+    <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#menu">Our Menu</a></li>
         <li><a href="#delivery">Delivery</a></li>
         <li><a href="#reserve">Reservation</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-    <div>
+    </div>
+    <div class="footer-col">
+      <h4>Cuisines</h4>
+      <ul>
+        <li><a href="#menu">🍕 Italian</a></li>
+        <li><a href="#menu">🍛 Punjabi</a></li>
+        <li><a href="#menu">🥘 Gujarati</a></li>
+        <li><a href="#menu">🌮 Mexican</a></li>
+        <li><a href="#menu">🍰 Desserts</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
       <h4>Newsletter</h4>
-      <p class="muted">Special offers aur new dishes — monthly once.</p>
+      <p style="font-size:.85rem;color:rgba(255,255,255,.45);margin-bottom:.75rem">Special offers aur new dishes — monthly.</p>
       <form class="news-form" id="newsForm" novalidate>
-        <input type="email" id="newsEmail" aria-label="Email" placeholder="aap@example.com" required />
-        <button class="btn btn-primary" type="submit">Join</button>
+        <input type="email" id="newsEmail" aria-label="Email" placeholder="aap@example.com" required/>
+        <button class="btn btn-primary" type="submit" style="padding:.65rem 1rem">Join</button>
       </form>
       <p class="form-success" id="newsSuccess" role="status" hidden></p>
     </div>
   </div>
   <div class="container footer-bottom">
     <p>© <span id="year"></span> Prime Restaurant. All rights reserved.</p>
-    <ul class="social">
-      <li><a href="#" aria-label="Instagram">Instagram</a></li>
-      <li><a href="#" aria-label="Facebook">Facebook</a></li>
+    <ul class="social-links">
+      <li><a href="#" aria-label="Instagram">📷 Instagram</a></li>
+      <li><a href="#" aria-label="Facebook">👍 Facebook</a></li>
     </ul>
   </div>
 </footer>
 
 <!-- CART FAB -->
 <button class="cart-fab" id="cartFab" aria-label="Open order">
-  <span>🛒</span>
-  <span class="cart-count" id="cartCount">0</span>
+  🛒<span class="cart-count" id="cartCount">0</span>
 </button>
 
 <div class="cart-backdrop" id="cartBackdrop" hidden></div>
 <aside class="cart-panel" id="cartPanel" aria-label="Your order" hidden>
   <div class="cart-head">
     <h3>Aapka Order</h3>
-    <button class="cart-close" id="cartClose" aria-label="Close">&times;</button>
+    <button class="cart-close" id="cartClose" aria-label="Close">✕</button>
   </div>
   <div class="cart-body" id="cartBody"></div>
   <div class="cart-foot">
-    <div class="cart-total"><span>Total</span><strong id="cartTotal">₹0.00</strong></div>
-    <form class="order-form" id="orderForm" novalidate>
-      <div class="field">
-        <label for="orderName">Naam</label>
-        <input type="text" id="orderName" placeholder="Aapka naam" required />
-      </div>
+    <div class="cart-total"><span>Total Amount</span><strong id="cartTotal">₹0.00</strong></div>
+    <form id="orderForm" novalidate>
+      <div class="field"><label for="orderName">Aapka Naam</label><input type="text" id="orderName" placeholder="Naam likhein" required/></div>
       <div class="field-row two">
-        <div class="field">
-          <label for="orderPhone">Phone</label>
-          <input type="tel" id="orderPhone" placeholder="98765 43210" required />
-        </div>
+        <div class="field"><label for="orderPhone">Phone Number</label><input type="tel" id="orderPhone" placeholder="98765 43210" required/></div>
         <div class="field">
           <label for="orderType">Order Type</label>
           <select id="orderType">
@@ -371,7 +414,7 @@
         </div>
       </div>
       <div class="field" id="tableField">
-        <label for="orderTable">Table</label>
+        <label for="orderTable">Table Number</label>
         <select id="orderTable">
           <option>Table 1</option><option>Table 2</option><option>Table 3</option>
           <option>Table 4</option><option>Table 5</option><option>Table 6</option>
@@ -380,14 +423,11 @@
       </div>
       <div class="field" id="addressField" style="display:none">
         <label for="orderAddress">Delivery Address</label>
-        <textarea id="orderAddress" rows="2" placeholder="Ghar ka address likhein…"></textarea>
+        <textarea id="orderAddress" rows="2" placeholder="Ghar ka pura address likhein…"></textarea>
       </div>
-      <div class="field">
-        <label for="orderNotes">Notes <span class="optional">(optional)</span></label>
-        <input type="text" id="orderNotes" placeholder="Kam spicy, no onion…" />
-      </div>
+      <div class="field"><label for="orderNotes">Special Notes <span class="opt-label">(Optional)</span></label><input type="text" id="orderNotes" placeholder="Kam spicy, no onion…"/></div>
       <p class="cart-error" id="cartError" hidden></p>
-      <button class="btn btn-primary btn-block" type="submit" id="placeOrderBtn">Order Place Karein 🚀</button>
+      <button class="btn btn-primary btn-block" type="submit" id="placeOrderBtn" style="border-radius:12px;padding:.9rem">🚀 Order Place Karein</button>
     </form>
   </div>
 </aside>

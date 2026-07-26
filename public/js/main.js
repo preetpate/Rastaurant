@@ -99,33 +99,35 @@
   /* ============================================================
      MENU RENDERING
   ============================================================ */
-  function vegDot(tag) {
-    if (tag === "veg") return '<span class="vd vd-green" title="Veg"></span>';
-    if (tag === "nonveg") return '<span class="vd vd-red" title="Non-Veg"></span>';
+  function vegMark(tag) {
+    if (tag === "veg")    return '<span class="veg-mark veg"    title="Veg"></span>';
+    if (tag === "nonveg") return '<span class="veg-mark nonveg" title="Non-Veg"></span>';
     return "";
   }
 
   function itemMarkup(item) {
     const extrasHtml = item.extras && item.extras.length
-      ? '<div class="extras-row">' +
-          item.extras.map((e, i) =>
-            '<label class="extra-chip"><input type="checkbox" data-item="' + item.name +
-            '" data-extra="' + e + '" />' + e + '</label>'
+      ? '<p class="extras-title">Add Extras:</p>' +
+        '<div class="extras-wrap">' +
+          item.extras.map(e =>
+            '<label class="extra-pill"><input type="checkbox" data-item="' +
+            item.name + '" data-extra="' + e + '"/>' + e + '</label>'
           ).join("") +
-        "</div>"
+        '</div>'
       : "";
+
     return (
-      '<article class="menu-card" data-tag="' + (item.tag || "veg") + '">' +
-        '<div class="menu-card-img"><img src="' + item.img + '" alt="' + item.name + '" loading="lazy" /></div>' +
-        '<div class="menu-card-body">' +
-          '<div class="menu-card-top">' +
-            vegDot(item.tag) +
-            '<h3>' + item.name + '</h3>' +
-          '</div>' +
-          '<p class="menu-card-desc">' + item.desc + '</p>' +
-          (extrasHtml ? '<p class="extras-label">Add extras:</p>' + extrasHtml : '') +
-          '<div class="menu-card-foot">' +
-            '<span class="menu-price">₹' + item.price + '</span>' +
+      '<article class="dish-card" data-tag="' + (item.tag || "veg") + '">' +
+        '<div class="dish-img">' +
+          '<img src="' + item.img + '" alt="' + item.name + '" loading="lazy"/>' +
+          vegMark(item.tag) +
+        '</div>' +
+        '<div class="dish-body">' +
+          '<h3 class="dish-name">' + item.name + '</h3>' +
+          '<p class="dish-desc">' + item.desc + '</p>' +
+          extrasHtml +
+          '<div class="dish-foot">' +
+            '<span class="dish-price">₹' + item.price + '</span>' +
             '<button class="add-btn" data-name="' + item.name + '" data-price="' + item.price + '">+ Add</button>' +
           '</div>' +
         '</div>' +
@@ -153,28 +155,26 @@
   /* ============================================================
      TABS
   ============================================================ */
-  $$(".tab").forEach(function (tab) {
+  $$(".ctab").forEach(function (tab) {
     tab.addEventListener("click", function () {
       activeTab = tab.dataset.tab;
-      $$(".tab").forEach(function (t) {
-        const on = t === tab;
-        t.classList.toggle("is-active", on);
-        t.setAttribute("aria-selected", String(on));
-      });
-      $$(".menu-grid").forEach(function (p) {
-        p.hidden = p.dataset.panel !== activeTab;
-      });
+      $$(".ctab").forEach(t => { t.classList.remove("active"); t.setAttribute("aria-selected","false"); });
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected","true");
+      $$("[data-panel]").forEach(p => { p.hidden = p.dataset.panel !== activeTab; });
     });
   });
 
   /* ============================================================
      VEG / NON-VEG FILTER BUTTONS
   ============================================================ */
-  $$(".veg-filter-btn").forEach(function(btn) {
+  $$(".filt-btn").forEach(function(btn) {
     btn.addEventListener("click", function() {
       vegFilter = btn.dataset.filter;
-      $$(".veg-filter-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+      $$(".filt-btn").forEach(b => { b.classList.remove("active","v-active","nv-active"); });
+      if (vegFilter === "veg")    btn.classList.add("v-active");
+      else if (vegFilter === "nonveg") btn.classList.add("nv-active");
+      else btn.classList.add("active");
       renderAllPanels();
     });
   });
