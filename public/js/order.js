@@ -29,7 +29,7 @@
   }
 
   function money(n) {
-    return "$" + n.toFixed(2);
+    return "₹" + n.toFixed(2);
   }
 
   function add(name, price) {

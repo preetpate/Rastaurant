@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Login — Prime Restaurant</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<style>
+  :root {
+    --bg: #0e0f0d; --panel: #171a16; --line: rgba(255,255,255,.1);
+    --gold: #c8a24a; --text: #f2f1ec; --muted: #9a9d93; --red: #d9694a;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--sans); min-height: 100vh;
+    display: grid; place-items: center; padding: 1.5rem;
+  }
+  .login-card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 20px; padding: 2.5rem 2rem; width: 100%; max-width: 380px;
+    box-shadow: 0 32px 80px rgba(0,0,0,.4);
+  }
+  .login-logo {
+    display: flex; align-items: center; gap: .75rem; margin-bottom: 2rem; justify-content: center;
+  }
+  .login-logo img { height: 48px; }
+  .login-logo span { font-family: var(--serif); font-size: 1.5rem; }
+  .login-logo em { color: var(--gold); font-style: normal; }
+  h1 { font-family: var(--serif); font-size: 1.8rem; margin: 0 0 .25rem; text-align: center; }
+  .sub { color: var(--muted); font-size: .88rem; text-align: center; margin: 0 0 2rem; }
+  .field { margin-bottom: 1.25rem; }
+  .field label { display: block; font-size: .82rem; font-weight: 500; margin-bottom: .4rem; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+  .field input {
+    width: 100%; padding: .85rem 1rem; border: 1px solid var(--line);
+    border-radius: 10px; background: rgba(255,255,255,.05); color: var(--text);
+    font-family: var(--sans); font-size: .95rem;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  .field input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,162,74,.15); }
+  .btn {
+    width: 100%; padding: .9rem; border-radius: 999px; border: 0;
+    background: var(--gold); color: #1a1a17; font-family: var(--sans);
+    font-weight: 600; font-size: .95rem; cursor: pointer; transition: .2s ease;
+    margin-top: .5rem;
+  }
+  .btn:hover { background: #e2c67e; transform: translateY(-2px); }
+  .error-msg {
+    background: rgba(217,105,74,.15); border: 1px solid rgba(217,105,74,.4);
+    color: #eaa189; padding: .7rem 1rem; border-radius: 8px;
+    font-size: .85rem; margin-bottom: 1rem; display: none; text-align: center;
+  }
+  .error-msg.show { display: block; }
+  .admin-badge {
+    text-align: center; margin-top: 1.5rem;
+    font-size: .75rem; color: var(--muted); letter-spacing: .08em;
+  }
+  .lock-icon { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; }
+</style>
+</head>
+<body>
+<div class="login-card">
+  <div class="login-logo">
+    <img src="assets/logo-mark.png" alt="Prime Restaurant" />
+    <span>Prime <em>Restaurant</em></span>
+  </div>
+  <div class="lock-icon">🔐</div>
+  <h1>Admin Login</h1>
+  <p class="sub">Kitchen &amp; Orders Dashboard</p>
+
+  <div class="error-msg" id="errorMsg">❌ Galat ID ya Password. Dobara try karo.</div>
+
+  <form id="loginForm">
+    <div class="field">
+      <label for="adminId">Admin ID</label>
+      <input type="text" id="adminId" placeholder="admin" autocomplete="username" required />
+    </div>
+    <div class="field">
+      <label for="adminPass">Password</label>
+      <input type="password" id="adminPass" placeholder="••••••••" autocomplete="current-password" required />
+    </div>
+    <button class="btn" type="submit">Login →</button>
+  </form>
+
+  <p class="admin-badge">🔒 Sirf authorized staff ke liye</p>
+</div>
+
+<script>
+// Admin credentials — change these as needed
+const ADMIN_ID = "admin";
+const ADMIN_PASS = "prime@2024";
+
+// If already logged in, redirect to admin
+if (sessionStorage.getItem("prime_admin_auth") === "true") {
+  window.location.replace("admin.html");
+}
+
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const id = document.getElementById("adminId").value.trim();
+  const pass = document.getElementById("adminPass").value;
+  const err = document.getElementById("errorMsg");
+
+  if (id === ADMIN_ID && pass === ADMIN_PASS) {
+    sessionStorage.setItem("prime_admin_auth", "true");
+    window.location.replace("admin.html");
+  } else {
+    err.classList.add("show");
+    document.getElementById("adminPass").value = "";
+    document.getElementById("adminPass").focus();
+  }
+});
+</script>
+</body>
+</html>

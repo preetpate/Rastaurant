@@ -2,45 +2,187 @@
 (function () {
   "use strict";
 
-  /* ---------- Data ---------- */
+  /* ---------- Menu Data — Italian, Punjabi, Mexican + Drinks ---------- */
   const MENU = {
-    starters: [
-      { name: "Charred Corn Chaat", price: "$12", desc: "Sweetcorn, tamarind, mint yoghurt, sev.", tag: "veg" },
-      { name: "Tandoori Prawns", price: "$18", desc: "Ajwain-cured tiger prawns, burnt lime butter.", tag: "spicy" },
-      { name: "Beetroot Galouti", price: "$14", desc: "Silken beet kebab, smoked chilli, warm paratha.", tag: "veg" },
-      { name: "Kashmiri Lamb Chops", price: "$21", desc: "Twelve-hour marinade, black cardamom, saffron jus." },
-      { name: "Curry Leaf Calamari", price: "$16", desc: "Semolina crust, kokum aioli, pickled shallot." },
-      { name: "Paneer Tikka", price: "$13", desc: "House paneer, ember-roasted peppers, mustard oil.", tag: "veg" }
+    italian: [
+      {
+        name: "Margherita Pizza",
+        price: 349,
+        desc: "San Marzano tomato, fresh mozzarella, basil, extra virgin olive oil.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Chicken Penne Arrabbiata",
+        price: 449,
+        desc: "Grilled chicken, spicy tomato sauce, garlic, fresh chilli, parmesan.",
+        img: "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Pesto Pasta",
+        price: 399,
+        desc: "Basil pesto, pine nuts, cherry tomatoes, parmesan, spaghetti.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Chicken Lasagne",
+        price: 499,
+        desc: "Layered pasta, minced chicken bolognese, béchamel, mozzarella.",
+        img: "https://images.unsplash.com/photo-1548943487-a2e4e43b4853?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Mushroom Risotto",
+        price: 429,
+        desc: "Arborio rice, mixed mushrooms, white wine, parmesan, truffle oil.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Tiramisu",
+        price: 249,
+        desc: "Espresso-soaked ladyfingers, mascarpone cream, cocoa dusting.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80"
+      }
     ],
-    mains: [
-      { name: "Butter Chicken", price: "$26", desc: "Clay-oven chicken, fenugreek tomato cream, naan." },
-      { name: "Goan Fish Curry", price: "$29", desc: "Line-caught snapper, coconut, tamarind, red chilli.", tag: "spicy" },
-      { name: "Dal Saffron", price: "$19", desc: "Black lentils simmered overnight, cultured butter.", tag: "veg" },
-      { name: "Lamb Rogan Josh", price: "$32", desc: "Slow-braised shoulder, Kashmiri chilli, saffron rice." },
-      { name: "Kerala Duck Moilee", price: "$31", desc: "Confit duck leg, coconut milk, green chilli, curry leaf." },
-      { name: "Wild Mushroom Biryani", price: "$24", desc: "Aged basmati, morels, mint raita, pastry seal.", tag: "veg" }
+    punjabi: [
+      {
+        name: "Butter Chicken",
+        price: 379,
+        desc: "Tandoori chicken in rich tomato-butter gravy, fenugreek, cream.",
+        img: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Dal Makhani",
+        price: 299,
+        desc: "Black lentils slow-cooked overnight, butter, cream, spices.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Amritsari Kulcha",
+        price: 199,
+        desc: "Stuffed tandoor bread, spiced potato filling, served with chole.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Sarson da Saag & Makki Roti",
+        price: 329,
+        desc: "Mustard greens cooked in desi ghee, served with cornmeal flatbread.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1627662168223-7df99068099a?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Lamb Rogan Josh",
+        price: 499,
+        desc: "Slow-braised Kashmiri lamb, Kashmiri chilli, saffron basmati.",
+        tag: "spicy",
+        img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Paneer Tikka Masala",
+        price: 349,
+        desc: "Chargrilled cottage cheese in spiced tomato-onion masala, naan.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=600&q=80"
+      }
     ],
-    desserts: [
-      { name: "Saffron Kulfi", price: "$11", desc: "Slow-reduced milk, pistachio praline, rose." },
-      { name: "Gulab Jamun Sundae", price: "$12", desc: "Warm dumplings, cardamom ice cream, burnt honey." },
-      { name: "Mango Shrikhand", price: "$10", desc: "Hung curd, Alphonso mango, black salt tuile.", tag: "veg" },
-      { name: "Dark Chocolate Kaju", price: "$13", desc: "70% ganache, cashew fudge, cocoa nib crumble." }
+    mexican: [
+      {
+        name: "Chicken Tacos (3 pcs)",
+        price: 379,
+        desc: "Grilled chicken, pico de gallo, guacamole, sour cream, corn tortilla.",
+        tag: "spicy",
+        img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Paneer Quesadilla",
+        price: 299,
+        desc: "Spiced paneer, peppers, cheese, jalapeños in crispy flour tortilla.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1618040996337-56904b7850b9?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Beef Burrito Bowl",
+        price: 449,
+        desc: "Seasoned ground beef, rice, black beans, corn salsa, sour cream.",
+        tag: "spicy",
+        img: "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Veggie Nachos",
+        price: 329,
+        desc: "Tortilla chips, jalapeños, cheese sauce, guacamole, sour cream.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Chicken Enchiladas",
+        price: 429,
+        desc: "Corn tortillas filled with chicken, smothered in red chilli sauce, cheese.",
+        img: "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Churros with Chocolate",
+        price: 199,
+        desc: "Crispy fried dough, cinnamon sugar, warm dark chocolate dipping sauce.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=600&q=80"
+      }
     ],
     drinks: [
-      { name: "Tamarind Margarita", price: "$16", desc: "Blanco tequila, tamarind, chilli salt." },
-      { name: "Curry Leaf Gimlet", price: "$15", desc: "Gin, curry leaf cordial, lime." },
-      { name: "Masala Chai Old Fashioned", price: "$17", desc: "Chai-washed bourbon, jaggery, orange." },
-      { name: "Salt Lassi", price: "$7", desc: "Cultured yoghurt, roasted cumin, mint.", tag: "veg" },
-      { name: "Kokum Soda", price: "$8", desc: "Kokum, ginger, soda — zero proof.", tag: "veg" },
-      { name: "Sommelier's Pour", price: "$14", desc: "Rotating low-intervention glass. Ask tonight's list." }
+      {
+        name: "Mango Lassi",
+        price: 149,
+        desc: "Fresh Alphonso mango, creamy yoghurt, hint of cardamom.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Masala Chai",
+        price: 99,
+        desc: "Strong tea, fresh ginger, cardamom, cinnamon, full-fat milk.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Virgin Mojito",
+        price: 179,
+        desc: "Fresh lime, mint, soda, hint of sugar — zero proof and refreshing.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Cold Coffee",
+        price: 169,
+        desc: "Strong espresso, cold milk, ice, touch of vanilla.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Watermelon Juice",
+        price: 129,
+        desc: "Fresh-pressed watermelon, mint, black salt — served chilled.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Lemonade",
+        price: 119,
+        desc: "Fresh lime, sugar, soda, mint — the classic thirst quencher.",
+        tag: "veg",
+        img: "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9e?auto=format&fit=crop&w=600&q=80"
+      }
     ]
   };
 
   const REVIEWS = [
-    { quote: "The best Indian food I have eaten outside of Delhi. The lamb chops alone are worth the trip.", author: "Amara Patel · Food & Fire Magazine" },
-    { quote: "Warm, unhurried service and a wine list that actually surprises you. We have been back four times this year.", author: "Daniel Ross · Regular since 2019" },
-    { quote: "A masterclass in restraint. Every dish tastes like it has been cooked a thousand times, and still with love.", author: "The Springfield Review · ★★★★★" },
-    { quote: "They handled our nut allergy flawlessly and still made the tasting menu feel generous. Rare and appreciated.", author: "Meera & Josh · Anniversary dinner" }
+    { quote: "Butter Chicken aur Dal Makhani — life mein pehli baar itna authentic khana khaya. Dil khush ho gaya!", author: "Rahul Sharma · Google Review ★★★★★" },
+    { quote: "Pizza ka taste gajab tha, aur Mango Lassi toh next level. Definitely coming back!", author: "Priya Mehta · Regular Guest" },
+    { quote: "Tacos aur Nachos ka combination perfect tha. Family ke saath aana tha, sabne enjoy kiya.", author: "Vikram Singh · Family Dinner" },
+    { quote: "QR se order kiya, 20 minute mein fresh hot food — service is top class!", author: "Neha Patel · Zomato Review ★★★★★" }
   ];
 
   const $ = (sel, root) => (root || document).querySelector(sel);
@@ -49,15 +191,23 @@
   /* ---------- Menu rendering ---------- */
   function itemMarkup(item) {
     const badge = item.tag === "veg"
-      ? '<span class="badge veg">Veg</span>'
-      : item.tag === "spicy" ? '<span class="badge">Spicy</span>' : "";
+      ? '<span class="badge veg">🌿 Veg</span>'
+      : item.tag === "spicy" ? '<span class="badge spicy">🌶 Spicy</span>' : "";
+    const imgHtml = item.img
+      ? '<div class="menu-img-wrap"><img class="menu-img" src="' + item.img + '" alt="' + item.name + '" loading="lazy" /></div>'
+      : "";
     return (
       '<article class="menu-item">' +
-        "<h3>" + item.name + badge + "</h3>" +
-        '<span class="price">' + item.price + "</span>" +
-        '<p class="desc">' + item.desc + "</p>" +
-        '<button class="add-btn" data-name="' + item.name + '" data-price="' +
-          item.price.replace("$", "") + '">Add</button>' +
+        imgHtml +
+        '<div class="menu-item-body">' +
+          "<h3>" + item.name + "</h3>" +
+          (badge ? '<div class="menu-badges">' + badge + "</div>" : "") +
+          '<p class="desc">' + item.desc + "</p>" +
+          '<div class="menu-item-foot">' +
+            '<span class="price">₹' + item.price + "</span>" +
+            '<button class="add-btn" data-name="' + item.name + '" data-price="' + item.price + '">+ Add</button>' +
+          "</div>" +
+        "</div>" +
       "</article>"
     );
   }

@@ -12,7 +12,7 @@
   let knownIds = new Set();
   let firstLoad = true;
 
-  const money = (n) => "$" + Number(n).toFixed(2);
+  const money = (n) => "₹" + Number(n).toFixed(2);
 
   function timeAgo(iso) {
     const seconds = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
@@ -204,4 +204,10 @@
 
   fetchOrders();
   startPolling();
+
+  // Logout
+  $("#logoutBtn").addEventListener("click", function () {
+    sessionStorage.removeItem("prime_admin_auth");
+    window.location.replace("admin-login.html");
+  });
 })();
