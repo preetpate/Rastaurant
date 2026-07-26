@@ -371,3 +371,25 @@ h3 { font-size:1.25rem; }
   .cuisine-nav{gap:.35rem} .cnav{padding:.5rem .9rem;font-size:.78rem}
   .stats-row{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ── DISH IMAGE ROUND + LIGHTBOX ── */
+.dish-img-wrap {
+  aspect-ratio: 1 !important;
+  border-radius: 50% !important;
+  width: 140px !important;
+  margin: 1.25rem auto .75rem !important;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+  box-shadow: 0 4px 20px rgba(201,168,76,0.2);
+  cursor: zoom-in;
+  flex-shrink: 0;
+}
+.dish-card { align-items: center; text-align: center; }
+.dish-info { width: 100%; }
+.dish-foot { justify-content: center; gap: 1rem; }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,.92); display: grid; place-items: center; cursor: zoom-out; }
+.lightbox img { max-width: 92vw; max-height: 88vh; border-radius: var(--r2); box-shadow: var(--shadow-lg); object-fit: contain; }
+.lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: #fff; width: 44px; height: 44px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; display: grid; place-items: center; transition: .2s; }
+.lightbox-close:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
