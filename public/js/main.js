@@ -118,11 +118,11 @@
 
     return (
       '<article class="dish-card" data-tag="' + (item.tag || "veg") + '">' +
-        '<div class="dish-img">' +
+        '<div class="dish-img-wrap">' +
           '<img src="' + item.img + '" alt="' + item.name + '" loading="lazy"/>' +
           vegMark(item.tag) +
         '</div>' +
-        '<div class="dish-body">' +
+        '<div class="dish-info">' +
           '<h3 class="dish-name">' + item.name + '</h3>' +
           '<p class="dish-desc">' + item.desc + '</p>' +
           extrasHtml +
@@ -155,12 +155,11 @@
   /* ============================================================
      TABS
   ============================================================ */
-  $$(".ctab").forEach(function (tab) {
+  $$(".cnav").forEach(function (tab) {
     tab.addEventListener("click", function () {
       activeTab = tab.dataset.tab;
-      $$(".ctab").forEach(t => { t.classList.remove("active"); t.setAttribute("aria-selected","false"); });
+      $$(".cnav").forEach(t => t.classList.remove("active"));
       tab.classList.add("active");
-      tab.setAttribute("aria-selected","true");
       $$("[data-panel]").forEach(p => { p.hidden = p.dataset.panel !== activeTab; });
     });
   });
@@ -168,13 +167,13 @@
   /* ============================================================
      VEG / NON-VEG FILTER BUTTONS
   ============================================================ */
-  $$(".filt-btn").forEach(function(btn) {
+  $$(".filt").forEach(function(btn) {
     btn.addEventListener("click", function() {
       vegFilter = btn.dataset.filter;
-      $$(".filt-btn").forEach(b => { b.classList.remove("active","v-active","nv-active"); });
-      if (vegFilter === "veg")    btn.classList.add("v-active");
+      $$(".filt").forEach(b => b.classList.remove("all-active","veg-active","nv-active"));
+      if (vegFilter === "veg")    btn.classList.add("veg-active");
       else if (vegFilter === "nonveg") btn.classList.add("nv-active");
-      else btn.classList.add("active");
+      else btn.classList.add("all-active");
       renderAllPanels();
     });
   });
