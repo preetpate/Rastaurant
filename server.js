@@ -8,6 +8,8 @@ const fs = require("fs");
 const path = require("path");
 const os = require("os");
 const QRCode = require("qrcode");
+const https = require("https");
+const http = require("http");
 
 const PORT = process.env.PORT || 3000;
 const DATA_DIR = path.join(__dirname, "data");
@@ -136,4 +138,18 @@ app.listen(PORT, "0.0.0.0", () => {
   console.log("  Website (phone, same wifi): " + lan);
   console.log("  Admin dashboard: http://localhost:" + PORT + "/admin.html");
   console.log("  QR code for customers: http://localhost:" + PORT + "/qr.png\n");
+
+  // Keep-alive ping — prevents Render free tier from sleeping (every 4 min)
+  if (process.env.PUBLIC_URL || process.env.RENDER) {
+    const pingUrl = process.env.PUBLIC_URL || "https://rastaurant-rfty.onrender.com";
+    setInterval(() => {
+      const lib = pingUrl.startsWith("https") ? https : http;
+      lib.get(pingUrl + "/api/orders", (res) => {
+        console.log("[keep-alive] ping →", res.statusCode);
+      }).on("error", (err) => {
+        console.warn("[keep-alive] ping failed:", err.message);
+      });
+    }, 4 * 60 * 1000); // every 4 minutes
+    console.log("  Keep-alive ping active →", pingUrl);
+  }
 });
