@@ -216,8 +216,8 @@
     try {
       const res = await fetch("/api/reservations");
       const list = await res.json();
-      const grid = $("#reservationsList");
-      const empty = $("#resEmpty");
+      const grid = document.getElementById("reservationsList");
+      const empty = document.getElementById("resEmpty");
       if (!list.length) { grid.innerHTML = ""; empty.hidden = false; return; }
       empty.hidden = true;
       grid.innerHTML = list.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)).map(r => {
@@ -243,7 +243,7 @@
           '</div>' +
         '</div>';
       }).join("");
-    } catch(e) {}
+    } catch(e) { console.error("Reservations fetch error:", e); }
   }
 
   window.confirmRes = async function(id) {
@@ -255,15 +255,18 @@
     fetchReservations();
   };
 
-  $(".reserv-tab").addEventListener("click", function() {
+  // Use event delegation for reserv-tab click
+  document.addEventListener("click", function(e) {
+    const btn = e.target.closest(".reserv-tab");
+    if (!btn) return;
     currentView = currentView === "reservations" ? "orders" : "reservations";
     const isRes = currentView === "reservations";
-    $("#ordersView").hidden = isRes;
-    $("#reservationsView").hidden = !isRes;
-    this.textContent = isRes ? "📋 Orders" : "📅 Reservations";
-    this.style.background = isRes ? "rgba(111,191,91,.15)" : "rgba(201,168,76,.15)";
-    this.style.borderColor = isRes ? "rgba(111,191,91,.4)" : "rgba(201,168,76,.4)";
-    this.style.color = isRes ? "#6fbf5b" : "#c9a84c";
+    document.getElementById("ordersView").hidden = isRes;
+    document.getElementById("reservationsView").hidden = !isRes;
+    btn.textContent = isRes ? "📋 Orders" : "📅 Reservations";
+    btn.style.background = isRes ? "rgba(111,191,91,.15)" : "rgba(201,168,76,.15)";
+    btn.style.borderColor = isRes ? "rgba(111,191,91,.4)" : "rgba(201,168,76,.4)";
+    btn.style.color = isRes ? "#6fbf5b" : "#c9a84c";
     if (isRes) fetchReservations();
   });
 
