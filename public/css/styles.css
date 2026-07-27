@@ -107,7 +107,7 @@ h3 { font-size:1.25rem; }
 .hero { position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; }
 .hero-bg {
   position:absolute; inset:0;
-  background:url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
+  background:url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&q=85") center/cover no-repeat;
 }
 .hero-overlay {
   position:absolute; inset:0;
