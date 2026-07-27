@@ -454,3 +454,24 @@ h3 { font-size:1.25rem; }
 /* Fix 9: Gold ribbon text always visible */
 .gold-ribbon { overflow: hidden; }
 .ribbon-inner span { color: var(--black) !important; font-weight: 700; }
+
+/* ── IMAGE FALLBACK ── */
+.dish-img-wrap {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+}
+.dish-img-wrap img {
+  background: #1a1a1a;
+}
+/* Broken image placeholder */
+.dish-img-wrap img::after {
+  content: "🍽️";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  position: absolute;
+  inset: 0;
+}

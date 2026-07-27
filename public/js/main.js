@@ -18,7 +18,7 @@
       { name:"Pasta Arrabbiata",    price:279, tag:"veg",    desc:"Spicy tomato sauce, garlic, red chillies & penne pasta.",            img:"https://images.unsplash.com/photo-1598866594230-a7c12756260f?w=500&q=80", extras:["Add Chicken +₹89"] },
       { name:"Lasagna",             price:399, tag:"nonveg", desc:"Layered pasta, rich bolognese, bechamel sauce & melted cheese.",     img:"https://images.unsplash.com/photo-1619895092538-128341789043?w=500&q=80", extras:["Extra Cheese +₹49"] },
       { name:"Garlic Bread",        price:149, tag:"veg",    desc:"Toasted bread with garlic butter and herbs. Perfect starter.",       img:"https://images.unsplash.com/photo-1549931319-a545dcf3bc7b?w=500&q=80", extras:["Cheese Dip +₹39"] },
-      { name:"Cheese Garlic Bread", price:199, tag:"veg",    desc:"Crispy garlic bread loaded with melted mozzarella cheese.",         img:"https://images.unsplash.com/photo-1619096252214-ef06c45683e3?w=500&q=80", extras:["Extra Cheese +₹49"] },
+      { name:"Cheese Garlic Bread", price:199, tag:"veg",    desc:"Crispy garlic bread loaded with melted mozzarella cheese.",         img:"https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?w=500&q=80", extras:["Extra Cheese +₹49"] },
       { name:"Mushroom Risotto",    price:349, tag:"veg",    desc:"Arborio rice, wild mushrooms, parmesan & truffle oil.",              img:"https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=500&q=80", extras:["Add Chicken +₹89"] }
     ],
     punjabi: [
@@ -31,7 +31,7 @@
       { name:"Chole Bhature",         price:199, tag:"veg",    desc:"Spiced chickpea curry with fluffy deep-fried bhature.",          img:"https://images.unsplash.com/photo-1626132647523-66c7f06e5e0f?w=500&q=80", extras:["Extra Bhatura +₹39"] },
       { name:"Amritsari Kulcha",      price:189, tag:"veg",    desc:"Stuffed tandoor bread with spiced potato filling & chole.",      img:"https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80", extras:["Extra Kulcha +₹59"] },
       { name:"Tandoori Roti",         price:30,  tag:"veg",    desc:"Whole wheat bread baked fresh in clay tandoor.",                 img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&q=80", extras:["With Butter +₹10"] },
-      { name:"Butter Naan",           price:50,  tag:"veg",    desc:"Soft leavened bread cooked in tandoor, brushed with butter.",   img:"https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&q=80", extras:["Garlic Naan +₹10"] }
+      { name:"Butter Naan",           price:50,  tag:"veg",    desc:"Soft leavened bread cooked in tandoor, brushed with butter.",   img:"https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=500&q=80", extras:["Garlic Naan +₹10"] }
     ],
     gujarati: [
       { name:"Gujarati Thali",  price:349, tag:"veg", desc:"Complete thali: dal, sabzi, roti, rice, papad, pickle & sweet.",       img:"https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=500&q=80", extras:["Extra Roti +₹30","Extra Sweet +₹39"] },
@@ -66,7 +66,7 @@
       { name:"Cold Coffee",     price:149, tag:"veg", desc:"Espresso blended with cold milk, ice & hint of vanilla.",         img:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80", extras:["Extra Shot +₹29","Whipped Cream +₹29"] },
       { name:"Mango Shake",     price:169, tag:"veg", desc:"Fresh Alphonso mango blended with chilled full-fat milk.",        img:"https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&q=80", extras:["Extra Scoop +₹39"] },
       { name:"Sweet Lassi",     price:129, tag:"veg", desc:"Chilled creamy yoghurt drink lightly sweetened with sugar.",      img:"https://images.unsplash.com/photo-1571197800987-72ee24cbbf3d?w=500&q=80", extras:["Rose Flavour +₹19"] },
-      { name:"Masala Chaas",    price:79,  tag:"veg", desc:"Salted buttermilk with roasted cumin, coriander & green chilli.", img:"https://images.unsplash.com/photo-1626500155208-9e53e10e46e5?w=500&q=80", extras:[] },
+      { name:"Masala Chaas",    price:79,  tag:"veg", desc:"Salted buttermilk with roasted cumin, coriander & green chilli.", img:"https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=500&q=80", extras:[] },
       { name:"Mojito",          price:159, tag:"veg", desc:"Fresh mint, lime, sugar & soda — refreshing zero proof drink.",   img:"https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&q=80", extras:["Strawberry +₹19","Passion Fruit +₹19"] }
     ],
     desserts: [
@@ -76,8 +76,8 @@
       { name:"Chocolate Lava Cake",   price:179, tag:"veg", desc:"Molten chocolate centre cake with vanilla ice cream.",              img:"https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80", extras:["Extra Ice Cream +₹49"] },
       { name:"Tiramisu",              price:299, tag:"veg", desc:"Espresso-soaked ladyfingers, mascarpone cream & cocoa.",            img:"https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500&q=80", extras:[] },
       { name:"Cheesecake",            price:279, tag:"veg", desc:"New York style baked cheesecake with berry compote.",               img:"https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500&q=80", extras:["Berry Compote +₹29","Caramel +₹29"] },
-      { name:"Rasmalai",              price:149, tag:"veg", desc:"Soft cottage cheese patties in chilled saffron-cardamom milk.",     img:"https://images.unsplash.com/photo-1571197800987-72ee24cbbf3d?w=500&q=80", extras:[] },
-      { name:"Falooda",               price:179, tag:"veg", desc:"Rose milk, basil seeds, vermicelli & ice cream — Indian classic.",  img:"https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&q=80", extras:["Extra Scoop +₹49"] }
+      { name:"Rasmalai",              price:149, tag:"veg", desc:"Soft cottage cheese patties in chilled saffron-cardamom milk.",     img:"https://images.unsplash.com/photo-1666290596543-ceba72a4cbf1?w=500&q=80", extras:[] },
+      { name:"Falooda",               price:179, tag:"veg", desc:"Rose milk, basil seeds, vermicelli & ice cream — Indian classic.",  img:"https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=500&q=80", extras:["Extra Scoop +₹49"] }
     ]
   };
 
@@ -103,7 +103,7 @@
       : "";
     return '<article class="dish-card" data-tag="' + (item.tag || "veg") + '">' +
       '<div class="dish-img-wrap">' +
-        '<img src="' + item.img + '" alt="' + item.name + '" loading="lazy"/>' +
+        '<img src="' + item.img + '" alt="' + item.name + '" loading="lazy" onerror="this.style.opacity=\'0.3\';this.src=\'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80\'"/>' +
         vegDot(item.tag) +
       '</div>' +
       '<div class="dish-info">' +
