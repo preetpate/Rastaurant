@@ -58,7 +58,7 @@
       { name:"Churros",              price:179, tag:"veg",    desc:"Crispy cinnamon-sugar fried dough with warm chocolate dip.",    img:"https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=500&q=80", extras:["Extra Dip +₹29"] }
     ],
     beverages: [
-      { name:"Mineral Water",   price:30,  tag:"veg", desc:"Chilled packaged mineral water, 500ml.",                           img:"https://images.unsplash.com/photo-1560023907-5f339617ea30?w=500&q=80", extras:[] },
+      { name:"Mineral Water",   price:30,  tag:"veg", desc:"Chilled packaged mineral water, 500ml.",                           img:"https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&q=80", extras:[] },
       { name:"Coca Cola",       price:60,  tag:"veg", desc:"Chilled Coca Cola, 300ml bottle.",                                 img:"https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500&q=80", extras:[] },
       { name:"Pepsi",           price:60,  tag:"veg", desc:"Chilled Pepsi, 300ml bottle.",                                    img:"https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=500&q=80", extras:[] },
       { name:"Sprite",          price:60,  tag:"veg", desc:"Chilled Sprite, 300ml bottle.",                                   img:"https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=500&q=80", extras:[] },
@@ -66,7 +66,7 @@
       { name:"Cold Coffee",     price:149, tag:"veg", desc:"Espresso blended with cold milk, ice & hint of vanilla.",         img:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80", extras:["Extra Shot +₹29","Whipped Cream +₹29"] },
       { name:"Mango Shake",     price:169, tag:"veg", desc:"Fresh Alphonso mango blended with chilled full-fat milk.",        img:"https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&q=80", extras:["Extra Scoop +₹39"] },
       { name:"Sweet Lassi",     price:129, tag:"veg", desc:"Chilled creamy yoghurt drink lightly sweetened with sugar.",      img:"https://images.unsplash.com/photo-1571197800987-72ee24cbbf3d?w=500&q=80", extras:["Rose Flavour +₹19"] },
-      { name:"Masala Chaas",    price:79,  tag:"veg", desc:"Salted buttermilk with roasted cumin, coriander & green chilli.", img:"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&q=80", extras:[] },
+      { name:"Masala Chaas",    price:79,  tag:"veg", desc:"Salted buttermilk with roasted cumin, coriander & green chilli.", img:"https://images.unsplash.com/photo-1626500155208-9e53e10e46e5?w=500&q=80", extras:[] },
       { name:"Mojito",          price:159, tag:"veg", desc:"Fresh mint, lime, sugar & soda — refreshing zero proof drink.",   img:"https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&q=80", extras:["Strawberry +₹19","Passion Fruit +₹19"] }
     ],
     desserts: [
@@ -228,7 +228,7 @@
   if (dateIn) dateIn.min = new Date().toISOString().split("T")[0];
 
   if (resForm) {
-    resForm.addEventListener("submit", function(e) {
+    resForm.addEventListener("submit", async function(e) {
       e.preventDefault();
       const name   = document.getElementById("name");
       const email  = document.getElementById("email");
@@ -251,10 +251,31 @@
       if (!guests.value)                  err(guests, "Guests chunein.");  else err(guests, "");
 
       if (!ok) return;
+
+      const btn = resForm.querySelector("button[type=submit]");
+      btn.disabled = true; btn.textContent = "Bhej rahe hain...";
+
+      try {
+        await fetch("/api/reservations", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: name.value.trim(),
+            email: email.value.trim(),
+            phone: "",
+            date: dateIn.value,
+            time: time.value,
+            guests: guests.value,
+            notes: (document.getElementById("notes") || {}).value || ""
+          })
+        });
+      } catch(ex) { /* offline — still show success */ }
+
       const suc = document.getElementById("formSuccess");
       suc.textContent = "Shukriya, " + name.value.trim().split(" ")[0] + "! Aapki reservation request mil gayi. Jaldi confirm karenge.";
       suc.hidden = false;
       resForm.reset();
+      btn.disabled = false; btn.textContent = "📅 Reservation Bhejein";
     });
   }
 

@@ -161,3 +161,10 @@ code { background: rgba(255,255,255,.08); padding: .1rem .35rem; border-radius: 
 .type-dinein  { color:#62a8e0; border-color:rgba(98,168,224,.4); background:rgba(98,168,224,.1); }
 .type-takeaway{ color:#a78bfa; border-color:rgba(167,139,250,.4); background:rgba(167,139,250,.1); }
 .type-delivery{ color:#6fbf5b; border-color:rgba(111,191,91,.4); background:rgba(111,191,91,.1); }
+
+/* ── RESERVATIONS ── */
+.reservations-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
+.res-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; }
+.res-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; }
+.res-name { font-family: var(--serif); font-size: 1.2rem; color: var(--text); }
+.res-details { display: flex; flex-wrap: wrap; gap: .75rem; font-size: .85rem; color: var(--muted); margin-bottom: .5rem; }

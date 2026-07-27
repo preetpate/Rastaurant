@@ -42,11 +42,12 @@
   </div>
 
   <div class="filters">
-    <button class="chip is-active" data-filter="all">All</button>
+    <button class="chip is-active" data-filter="all">All Orders</button>
     <button class="chip" data-filter="new">New</button>
     <button class="chip" data-filter="preparing">Preparing</button>
     <button class="chip" data-filter="served">Served</button>
     <button class="chip" data-filter="cancelled">Cancelled</button>
+    <button class="chip reserv-tab" data-view="reservations" style="margin-left:auto;background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.4);color:#c9a84c">📅 Reservations</button>
     <input type="search" id="search" placeholder="Search name, table or dish…" />
   </div>
 </header>
@@ -55,8 +56,16 @@
   <p class="conn-error" id="connError" hidden>
     Cannot reach the server. Start it with <code>npm start</code> and refresh this page.
   </p>
-  <div class="orders" id="orders"></div>
-  <p class="empty" id="empty" hidden>No orders yet. Scan the QR code and place one from your phone.</p>
+  <!-- ORDERS VIEW -->
+  <div id="ordersView">
+    <div class="orders" id="orders"></div>
+    <p class="empty" id="empty" hidden>No orders yet. Scan the QR code and place one from your phone.</p>
+  </div>
+  <!-- RESERVATIONS VIEW -->
+  <div id="reservationsView" hidden>
+    <div class="reservations-grid" id="reservationsList"></div>
+    <p class="empty" id="resEmpty" hidden>No reservations yet.</p>
+  </div>
 </main>
 
 <div class="modal" id="qrModal" hidden>

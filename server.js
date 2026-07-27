@@ -14,6 +14,7 @@ const http = require("http");
 const PORT = process.env.PORT || 3000;
 const DATA_DIR = path.join(__dirname, "data");
 const DATA_FILE = path.join(DATA_DIR, "orders.json");
+const RESERVATIONS_FILE = path.join(DATA_DIR, "reservations.json");
 const STATUSES = ["new", "preparing", "served", "cancelled"];
 
 const app = express();
@@ -33,6 +34,17 @@ function readOrders() {
 function writeOrders(orders) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.writeFileSync(DATA_FILE, JSON.stringify(orders, null, 2));
+}
+
+function readReservations() {
+  if (!fs.existsSync(RESERVATIONS_FILE)) return [];
+  try { return JSON.parse(fs.readFileSync(RESERVATIONS_FILE, "utf8")); }
+  catch { return []; }
+}
+
+function writeReservations(r) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+  fs.writeFileSync(RESERVATIONS_FILE, JSON.stringify(r, null, 2));
 }
 
 function localAddress() {
@@ -59,6 +71,50 @@ function siteUrl(req) {
 
 app.get("/api/orders", (req, res) => {
   res.json(readOrders());
+});
+
+// Reservations API
+app.get("/api/reservations", (req, res) => {
+  res.json(readReservations());
+});
+
+app.post("/api/reservations", (req, res) => {
+  const body = req.body || {};
+  if (!body.name || !body.email || !body.date || !body.time || !body.guests) {
+    return res.status(400).json({ error: "All fields required" });
+  }
+  const reservations = readReservations();
+  const reservation = {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5),
+    name: String(body.name).slice(0, 80),
+    email: String(body.email).slice(0, 120),
+    phone: String(body.phone || "").slice(0, 30),
+    date: String(body.date).slice(0, 20),
+    time: String(body.time).slice(0, 20),
+    guests: String(body.guests).slice(0, 5),
+    notes: String(body.notes || "").slice(0, 200),
+    status: "pending",
+    createdAt: new Date().toISOString()
+  };
+  reservations.push(reservation);
+  writeReservations(reservations);
+  console.log(`Reservation — ${reservation.name} (${reservation.guests} guests) on ${reservation.date} at ${reservation.time}`);
+  res.status(201).json(reservation);
+});
+
+app.patch("/api/reservations/:id", (req, res) => {
+  const status = req.body && req.body.status;
+  const reservations = readReservations();
+  const r = reservations.find(x => x.id === req.params.id);
+  if (!r) return res.status(404).json({ error: "not found" });
+  r.status = status;
+  writeReservations(reservations);
+  res.json(r);
+});
+
+app.delete("/api/reservations", (req, res) => {
+  writeReservations([]);
+  res.json({ cleared: true });
 });
 
 app.post("/api/orders", (req, res) => {

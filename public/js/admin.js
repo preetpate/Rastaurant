@@ -209,6 +209,64 @@
   fetchOrders();
   startPolling();
 
+  // Reservations tab
+  let currentView = "orders";
+
+  async function fetchReservations() {
+    try {
+      const res = await fetch("/api/reservations");
+      const list = await res.json();
+      const grid = $("#reservationsList");
+      const empty = $("#resEmpty");
+      if (!list.length) { grid.innerHTML = ""; empty.hidden = false; return; }
+      empty.hidden = true;
+      grid.innerHTML = list.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)).map(r => {
+        const statusColors = { pending:"#c9a84c", confirmed:"#6fbf5b", cancelled:"#d9694a" };
+        const col = statusColors[r.status] || "#c9a84c";
+        return '<div class="res-card" style="border-left:3px solid ' + col + '">' +
+          '<div class="res-top">' +
+            '<div>' +
+              '<div class="res-name">👤 ' + r.name + '</div>' +
+              '<div class="order-meta">' + r.email + (r.phone ? " · " + r.phone : "") + '</div>' +
+            '</div>' +
+            '<span class="pill" style="color:' + col + ';border-color:' + col + '">' + r.status + '</span>' +
+          '</div>' +
+          '<div class="res-details">' +
+            '<span>📅 ' + r.date + '</span>' +
+            '<span>🕐 ' + r.time + '</span>' +
+            '<span>👥 ' + r.guests + ' guests</span>' +
+          '</div>' +
+          (r.notes ? '<p class="order-notes">📝 ' + r.notes + '</p>' : '') +
+          '<div class="order-actions" style="margin-top:.75rem">' +
+            (r.status === "pending" ? '<button class="btn" onclick="confirmRes(\'' + r.id + '\')">✓ Confirm</button>' : '') +
+            (r.status !== "cancelled" ? '<button class="btn danger" onclick="cancelRes(\'' + r.id + '\')">✕ Cancel</button>' : '') +
+          '</div>' +
+        '</div>';
+      }).join("");
+    } catch(e) {}
+  }
+
+  window.confirmRes = async function(id) {
+    await fetch("/api/reservations/" + id, { method:"PATCH", headers:{"Content-Type":"application/json"}, body: JSON.stringify({status:"confirmed"}) });
+    fetchReservations();
+  };
+  window.cancelRes = async function(id) {
+    await fetch("/api/reservations/" + id, { method:"PATCH", headers:{"Content-Type":"application/json"}, body: JSON.stringify({status:"cancelled"}) });
+    fetchReservations();
+  };
+
+  $(".reserv-tab").addEventListener("click", function() {
+    currentView = currentView === "reservations" ? "orders" : "reservations";
+    const isRes = currentView === "reservations";
+    $("#ordersView").hidden = isRes;
+    $("#reservationsView").hidden = !isRes;
+    this.textContent = isRes ? "📋 Orders" : "📅 Reservations";
+    this.style.background = isRes ? "rgba(111,191,91,.15)" : "rgba(201,168,76,.15)";
+    this.style.borderColor = isRes ? "rgba(111,191,91,.4)" : "rgba(201,168,76,.4)";
+    this.style.color = isRes ? "#6fbf5b" : "#c9a84c";
+    if (isRes) fetchReservations();
+  });
+
   // Logout
   $("#logoutBtn").addEventListener("click", function () {
     sessionStorage.removeItem("prime_admin_auth");
