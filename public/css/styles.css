@@ -343,10 +343,8 @@ h3 { font-size:1.25rem; }
 .confirm-type { font-size:.85rem; color:var(--gray); margin-bottom:.75rem; }
 .confirm-msg { font-size:.85rem; color:var(--gray); margin-bottom:1.75rem; line-height:1.6; }
 
-/* ── REVEAL ── */
-.reveal { opacity:0; transform:translateY(28px); transition:opacity .75s ease,transform .75s ease; }
-.reveal.visible { opacity:1; transform:none; }
-@media(prefers-reduced-motion:reduce) { .reveal { opacity:1;transform:none;transition:none; } html { scroll-behavior:auto; } }
+/* ── REVEAL — DISABLED, always visible ── */
+.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 .to-top { position:fixed; right:1.5rem; bottom:1.5rem; z-index:90; width:44px; height:44px; border-radius:50%; border:1px solid var(--line-dark); background:var(--black3); color:var(--gold); font-size:1rem; cursor:pointer; transition:.2s; display:grid; place-items:center; }
 .to-top:hover { border-color:var(--gold); transform:translateY(-3px); }
 
@@ -396,10 +394,12 @@ h3 { font-size:1.25rem; }
 .lightbox-close:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
 
 /* ── CRITICAL FIXES ── */
-
-/* Fix 1: Reveal animation — make visible by default, animate in */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.visible { opacity: 1 !important; transform: none !important; }
+/* Fix 1: ALL reveal elements always visible */
+.reveal, .reveal.visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
 
 /* Fix 2: Force text visibility on dark sections */
 .stats-section, .about-section, .menu-section,
