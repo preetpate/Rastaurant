@@ -159,17 +159,17 @@
      MENU RENDERING
   ============================================================ */
   function vegMark(tag) {
-    if (tag === "veg")    return '<span class="veg-mark veg"    title="Veg"></span>';
-    if (tag === "nonveg") return '<span class="veg-mark nonveg" title="Non-Veg"></span>';
+    if (tag === "veg")    return '<span class="veg-dot veg" title="Veg"></span>';
+    if (tag === "nonveg") return '<span class="veg-dot nonveg" title="Non-Veg"></span>';
     return "";
   }
 
   function itemMarkup(item) {
     const extrasHtml = item.extras && item.extras.length
-      ? '<p class="extras-title">Add Extras:</p>' +
-        '<div class="extras-wrap">' +
+      ? '<p class="extras-label">Add Extras:</p>' +
+        '<div class="extras-chips">' +
           item.extras.map(e =>
-            '<label class="extra-pill"><input type="checkbox" data-item="' +
+            '<label class="ex-chip"><input type="checkbox" data-item="' +
             item.name + '" data-extra="' + e + '"/>' + e + '</label>'
           ).join("") +
         '</div>'
@@ -186,7 +186,7 @@
           '<p class="dish-desc">' + item.desc + '</p>' +
           extrasHtml +
           '<div class="dish-foot">' +
-            '<span class="dish-price">₹' + item.price + '</span>' +
+            '<span class="dish-price">&#8377;' + item.price + '</span>' +
             '<button class="add-btn" data-name="' + item.name + '" data-price="' + item.price + '">+ Add</button>' +
           '</div>' +
         '</div>' +
