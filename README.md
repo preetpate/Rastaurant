@@ -58,4 +58,5 @@ PUBLIC_URL=https://your-domain.com npm start
 - Ye demo storage JSON file hai — bade traffic ke liye database (Postgres/SQLite) use karna behtar hai.
 - Admin page pe abhi koi password nahi hai; public server pe daalne se pehle login lagana zaroori hai.
 
-## Author by Preet Patel
+## Author by 
+Preet Patel
